@@ -57,6 +57,7 @@ for(let i = 0; i < blackKeys.length; i++){
 //Function that creates Audio object and prints action to console
 function createAudioAndPrint(folder, key) {
     let audio = new Audio(`${folder}/${key}.mp3`);
+    audio.preload = "auto";
     audio.play();
     console.log(`The '${key}' key is pressed.`);
 }
