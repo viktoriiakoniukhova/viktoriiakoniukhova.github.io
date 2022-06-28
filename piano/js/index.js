@@ -51,21 +51,6 @@ function createEventsOnMouse(keys, folder, grad, color) {
     }
 }
 
-createEventsOnTouch(whiteKeys, "white_keys", whiteGrad, whiteColor);
-createEventsOnTouch(blackKeys, "black_keys", greyGrad, greyColor);
-
-function createEventsOnTouch(keys, folder, grad, color) {
-    for(let i = 0; i < keys.length; i++){
-        keys[i].addEventListener("touchstart", (ev =>{
-            createAudioAndPrint(folder, ev.target.innerText);
-            changeColor(ev.target.innerText, keys, grad);
-        }))
-        keys[i].addEventListener("touchend", (ev => {
-            changeColor(ev.target.innerText, keys, color);
-        }))
-    }
-}
-
 //Function that creates Audio object and prints action to console
 function createAudioAndPrint(folder, key) {
     let audio = new Audio(`${folder}/${key}.mp3`);
