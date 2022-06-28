@@ -15,12 +15,12 @@ document.addEventListener("keypress", (ev => {
     if(whiteCodes.includes(ev.code))
     {
         createAudioAndPrint('white_keys', ev.key.toUpperCase());
-        changeColorDown(ev.key.toUpperCase(), whiteKeys, whiteGrad);
+        changeColor(ev.key.toUpperCase(), whiteKeys, whiteGrad);
     }
     else if(blackCodes.includes(ev.code))
     {
         createAudioAndPrint('black_keys', ev.key.toUpperCase());
-        changeColorDown(ev.key.toUpperCase(), blackKeys, greyGrad);
+        changeColor(ev.key.toUpperCase(), blackKeys, greyGrad);
     }
     else
         console.log("Warning! Wrong key is pressed.");
@@ -29,29 +29,41 @@ document.addEventListener("keypress", (ev => {
 //Event when keyboard key is up
 document.addEventListener("keyup", (ev => {
     if(whiteCodes.includes(ev.code))
-        changeColorUp(ev.key.toUpperCase(), whiteKeys,  whiteColor);
+        changeColor(ev.key.toUpperCase(), whiteKeys,  whiteColor);
     else if(blackCodes.includes(ev.code))
-        changeColorUp(ev.key.toUpperCase(), blackKeys, greyColor);
+        changeColor(ev.key.toUpperCase(), blackKeys, greyColor);
 }))
 
-//Event when element is mouse downed
-for(let i = 0; i < whiteKeys.length; i++){
-    whiteKeys[i].addEventListener("mousedown", (ev =>{
-        createAudioAndPrint('white_keys', ev.target.innerText);
-        changeColorDown(ev.target.innerText, whiteKeys, whiteGrad);
-    }))
-    whiteKeys[i].addEventListener("mouseup", (ev => {
-        changeColorUp(ev.target.innerText, whiteKeys, whiteColor);
-    }))
+//Mouse down and up events
+createEventsOnMouse(whiteKeys, "white_keys", whiteGrad, whiteColor);
+createEventsOnMouse(blackKeys, "black_keys", greyGrad, greyColor);
+
+//Function that creates events when element is mouse downed
+function createEventsOnMouse(keys, folder, grad, color) {
+    for(let i = 0; i < keys.length; i++){
+        keys[i].addEventListener("mousedown", (ev =>{
+            createAudioAndPrint(folder, ev.target.innerText);
+            changeColor(ev.target.innerText, keys, grad);
+        }))
+        keys[i].addEventListener("mouseup", (ev => {
+            changeColor(ev.target.innerText, keys, color);
+        }))
+    }
 }
-for(let i = 0; i < blackKeys.length; i++){
-    blackKeys[i].addEventListener("mousedown", (ev =>{
-        createAudioAndPrint('black_keys', ev.target.innerText);
-        changeColorDown(ev.target.innerText, blackKeys, greyGrad);
-    }))
-    blackKeys[i].addEventListener("mouseup", (ev => {
-        changeColorUp(ev.target.innerText, blackKeys, greyColor);
-    }))
+
+createEventsOnTouch(whiteKeys, "white_keys", whiteGrad, whiteColor);
+createEventsOnTouch(blackKeys, "black_keys", greyGrad, greyColor);
+
+function createEventsOnTouch(keys, folder, grad, color) {
+    for(let i = 0; i < keys.length; i++){
+        keys[i].addEventListener("touchstart", (ev =>{
+            createAudioAndPrint(folder, ev.target.innerText);
+            changeColor(ev.target.innerText, keys, grad);
+        }))
+        keys[i].addEventListener("touchend", (ev => {
+            changeColor(ev.target.innerText, keys, color);
+        }))
+    }
 }
 
 //Function that creates Audio object and prints action to console
@@ -62,13 +74,8 @@ function createAudioAndPrint(folder, key) {
     console.log(`The '${key}' key is pressed.`);
 }
 
-function changeColorDown(key, keys, color) {
-    for(let i = 0; i < keys.length; i++){
-        if(keys[i].innerHTML === `${key}`)
-            keys[i].style.background = color;
-    }
-}
-function changeColorUp(key, keys, color) {
+// Function that changes key colors
+function changeColor(key, keys, color) {
     for(let i = 0; i < keys.length; i++){
         if(keys[i].innerHTML === `${key}`)
             keys[i].style.background = color;
