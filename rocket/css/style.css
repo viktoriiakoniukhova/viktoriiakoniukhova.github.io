@@ -99,7 +99,7 @@ input[type="range"] {
     justify-content: space-around;
 }
                                         /* DESKTOP STYLES */
-@media only screen and (min-width: 600px) {
+@media screen and (min-device-width: 500px){
     .space {
         flex-direction: row;
         align-items: flex-end;
@@ -131,18 +131,19 @@ input[type="range"] {
     }
 }
                                         /* MOBILE STYLES */
-@media only screen and (max-width: 600px) {
+@media screen and (max-device-width: 500px){
     .space{
         flex-direction: column;
         align-items: flex-start;
+        width: 90vw;
     }
     .planet-area {
         width: 100%;
         height: 100%;
     }
     .rocket{
-        bottom: 39vw;
-        left: 39vw;
+        bottom: 52vw;
+        left: 38vw;
 
         width: 20vw;
         height: 20vw;
@@ -155,9 +156,9 @@ input[type="range"] {
         top: 0;
         background-image: none;
 
-        /*-webkit-transition-duration: 0.7s;*/
-        /*-moz-transition-duration: 0.7s;*/
-        /*-o-transition-duration: 0.7s;*/
+        -webkit-transition-duration: 0.7s;
+        -moz-transition-duration: 0.7s;
+        -o-transition-duration: 0.7s;
         transition-duration: 0.7s;
     }
     .control-panel--element{
@@ -169,24 +170,25 @@ input[type="range"] {
 
         background-color: #252424;
         color:  #fff;
+        font-size: 2em;
     }
     .control-panel__inner {
         width: 300px;
-        height: 250px;
+        height: 260px;
         margin: 0;
         border-radius: 2vw;
 
         position: fixed;
-        top: -250px;
+        top: -260px;
 
-        /*-webkit-transition-duration: 0.7s;*/
-        /*-moz-transition-duration: 0.7s;*/
-        /*-o-transition-duration: 0.7s;*/
+        -webkit-transition-duration: 0.7s;
+        -moz-transition-duration: 0.7s;
+        -o-transition-duration: 0.7s;
         transition-duration: 0.7s;
 
     }
     .control-panel:hover {
-        top: 250px;
+        top: 260px;
     }
     .control-panel:hover .control-panel__inner{
         top: 0;

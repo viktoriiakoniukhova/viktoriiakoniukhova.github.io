@@ -57,7 +57,7 @@ let spaceAreaHeight = document.querySelector('.space').clientHeight;
 
 
 function moveRocket() {
-    if(spaceAreaWidth*0.6 > marginL && spaceAreaHeight > marginB){
+    if(spaceAreaWidth*0.55 > marginL && spaceAreaHeight > marginB){
         marginL += document.querySelector('input[type="range"]:nth-child(1)').value/10;
         marginB += document.querySelector('input[type="range"]:nth-child(2)').value/10;
 
