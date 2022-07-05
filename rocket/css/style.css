@@ -14,7 +14,6 @@ body {
     display: flex;
     width: 70vw;
     height: 100vh;
-    align-items: flex-end;
 
     background-image: url("../img/space.png");
 }
@@ -22,9 +21,6 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-
-    width: 45%;
-    /*height: 80%;*/
 }
 .planet{
     position: relative;
@@ -36,14 +32,6 @@ body {
 }
 .rocket{
     position: absolute;
-
-    bottom: 14vw;
-    left: 31vw;
-
-    width: 15vw;
-    height: 15vw;
-
-    transform: rotate(30deg);
     z-index: 1;
 }
                                     /*CONTROL PANEL STYLES*/
@@ -51,23 +39,16 @@ body {
     display: flex;
     align-self: center;
     justify-content: center;
-    margin-left: 10vw;
-    z-index: 2;
 
-    background-color: black;
-    background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, yellow 15px, yellow 30px);
-}
-.control-panel--element {
-    display: none;
+    z-index: 2;
 }
 .control-panel__inner{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 2vw 0;
-    margin: 1vw;
-    padding: 1vw ;
 
+    padding: 1vw ;
     background-color: #252424;
 }
 .input-wrapper{
@@ -117,11 +98,42 @@ input[type="range"] {
     width: 100%;
     justify-content: space-around;
 }
+                                        /* DESKTOP STYLES */
+@media only screen and (min-width: 600px) {
+    .space {
+        flex-direction: row;
+        align-items: flex-end;
+    }
+    .planet-area {
+        width: 45%;
+    }
+    .rocket {
+        bottom: 14vw;
+        left: 31vw;
 
-@media screen and (max-width: 700px) {
+        width: 15vw;
+        height: 15vw;
+
+        transform: rotate(30deg);
+    }
+    .control-panel {
+        margin-left: 10vw;
+        margin-right: 1vw;
+
+        background-color: black;
+        background-image: repeating-linear-gradient(45deg, transparent, transparent 20px, yellow 15px, yellow 30px);
+    }
+    .control-panel--element {
+        display: none;
+    }
+    .control-panel__inner {
+        margin: 1vw;
+    }
+}
+                                        /* MOBILE STYLES */
+@media only screen and (max-width: 600px) {
     .space{
         flex-direction: column;
-        width: 70vw;
         align-items: flex-start;
     }
     .planet-area {
@@ -129,8 +141,6 @@ input[type="range"] {
         height: 100%;
     }
     .rocket{
-        position: absolute;
-
         bottom: 39vw;
         left: 39vw;
 
@@ -138,7 +148,6 @@ input[type="range"] {
         height: 20vw;
 
         transform: rotate(5deg);
-        z-index: 1;
     }
     .control-panel {
         position: fixed;
@@ -146,9 +155,9 @@ input[type="range"] {
         top: 0;
         background-image: none;
 
-        -webkit-transition-duration: 0.7s;
-        -moz-transition-duration: 0.7s;
-        -o-transition-duration: 0.7s;
+        /*-webkit-transition-duration: 0.7s;*/
+        /*-moz-transition-duration: 0.7s;*/
+        /*-o-transition-duration: 0.7s;*/
         transition-duration: 0.7s;
     }
     .control-panel--element{
@@ -170,9 +179,9 @@ input[type="range"] {
         position: fixed;
         top: -250px;
 
-        -webkit-transition-duration: 0.7s;
-        -moz-transition-duration: 0.7s;
-        -o-transition-duration: 0.7s;
+        /*-webkit-transition-duration: 0.7s;*/
+        /*-moz-transition-duration: 0.7s;*/
+        /*-o-transition-duration: 0.7s;*/
         transition-duration: 0.7s;
 
     }
