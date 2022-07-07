@@ -75,7 +75,7 @@ body {
     color: antiquewhite;
 }
                             /*Flip animation on cards*/
-.container--cards-row{
+.container--cards-col{
     perspective: 1000px;
 }
 .container--cards-col{
@@ -102,9 +102,11 @@ body {
     background-color: sandybrown;
     color: antiquewhite;
     z-index: 1;
+
     transform: rotateY(180deg);
+
 }
 .container--cards-col:hover{
     transform: rotateY(180deg);
+    transition: all 1s linear;
 }
-
