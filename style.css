@@ -30,7 +30,6 @@ nav li:not(:last-child) {
 nav a {
     display: flex;
     justify-content: center;
-
     width: 100%;
     text-transform: uppercase;
     font-size: 1em;
@@ -48,10 +47,4 @@ nav a:hover {
 nav a:active {
     background: sandybrown;
     color: white;
-}
-iframe {
-    display: none;
-}
-a:hover + iframe,iframe:hover{
-    display: block;
 }
