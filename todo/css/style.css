@@ -1,0 +1,157 @@
+* {
+    font-family: 'Gulzar', serif;
+}
+
+body {
+    margin: 0 auto;
+}
+
+h1 {
+    font-family: 'Alfa Slab One', cursive;
+}
+
+header, main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.main-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+
+    width: 80vw;
+}
+
+.main-wrapper-input {
+    display: flex;
+    justify-content: space-between;
+}
+
+#input-task {
+    width: 80%;
+
+    border: none;
+    border-bottom: 4px solid #70587C;
+}
+
+#add-task-button {
+    width: 18%;
+
+    border: #C8B8DB;
+    background-color: #C8B8DB;
+    color: #fff;
+}
+
+.main-wrapper-list {
+    display: flex;
+
+    width: 80vw;
+}
+ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+    
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 80vw;
+}
+
+li input {
+    width: 3%;
+    margin-right: 10px;
+}
+.task {
+    display: block;
+    word-wrap: break-word;
+    width: 85%;
+    font-size: 1.2em;
+    line-height: 1.5em;
+}
+.delete-btn {
+    /*min-height: 30px;*/
+    /*max-width: 30px;*/
+
+    /*position: relative;*/
+
+    width: 5%;
+    padding: 0;
+    background-color: #F44336;
+    color: #fff;
+
+    border: 2px solid #F44336;
+    border-radius: 50%;
+}
+
+/*.delete-btn::before {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+
+/*    display: block;*/
+/*    background-color: #fff;*/
+
+/*    width: 2px;*/
+/*    left: 12px;*/
+/*    top: 5px;*/
+/*    bottom: 5px;*/
+/*    transform: rotate(45deg);*/
+/*}*/
+
+/*.delete-btn::after {*/
+/*    content: " ";*/
+/*    position: absolute;*/
+
+/*    display: block;*/
+/*    background-color: #fff;*/
+
+/*    height: 2px;*/
+/*    top:12px;*/
+/*    left: 5px;*/
+/*    right: 5px;*/
+/*    transform: rotate(45deg);*/
+/*}*/
+
+@media screen and (max-device-width: 420px){
+    body {
+        font-size: 2em;
+    }
+    .main-wrapper-input {
+        flex-direction: column;
+        align-items: center;
+    }
+    #input-task {
+        font-size: 1em;
+        width: 100%;
+    }
+    #add-task-button {
+        margin-top: 2em;
+        width: 100%;
+        font-size: 1em;
+    }
+    .task {
+        font-size: 1.5em;
+        line-height: 1em;
+    }
+    .delete-btn {
+        font-size: 1em;
+        width: 12%;
+    }
+    li input {
+        width: 40px;
+        height: 40px;
+    }
+}
