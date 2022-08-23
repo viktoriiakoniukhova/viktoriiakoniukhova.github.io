@@ -94,6 +94,7 @@ header{
   position: fixed;
   top: 0;
   width: 100%;
+  transition: top 0.3s;
 }
 .header-nav{
   display: flex;
