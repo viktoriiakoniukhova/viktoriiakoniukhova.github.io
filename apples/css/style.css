@@ -85,7 +85,7 @@ header{
     display: flex;
     flex-direction: column;
     color: white;
-    min-height: 919px;
+    min-height: 600px;
     background-image: url("../img/apples.jpg");
     background-size: cover;
     background-position: center center;
@@ -371,12 +371,41 @@ hr{
     text-decoration: none;
 }
 
-@media screen and (max-width: 1330px) {
+@media screen and (max-device-width: 1330px) {
 
     #footer_top_single_email__textarea{
         font-size: 10px;
     }
     #footer_top_single_email__button{
         font-size: 10px;
+    }
+}
+@media  screen and (max-device-width: 420px) {
+    .header_nav__menu{
+        flex: 2;
+    }
+    .body_section_info{
+        flex-direction: column;
+    }
+    .body_article_info__left, .body_article_info__right {
+        flex-direction: column;
+    }
+    .body_article_info__left_img{
+        order: -1;
+    }
+    .body_article_info__left_img, .body_article_info__right_img{
+        width: 100%;
+    }
+    .body_article_info__text{
+        text-align: justify;
+    }
+    .body_article_info_sub__form{
+        flex-direction: column;
+    }
+    .footer_top{
+        flex-direction: column;
+    }
+    .footer_top_single{
+        margin-left: 0;
     }
 }
