@@ -130,7 +130,7 @@ header{
   margin-left: 10%;
 
   background-image: url("../img/lady.jpg");
-  background-size: contain;
+  background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   background-attachment: scroll;
@@ -142,9 +142,6 @@ header{
 }
 .cont-div .cont-div-heading{
   line-height: normal;
-}
-h2:first-child{
-  line-height: 70%;
 }
 .cont-div-heading{
   font-size: 38px;
@@ -283,6 +280,7 @@ h4{
 .cont-div-block-offers{
   display: flex;
   justify-content: center;
+  align-items: center;
   padding: 5%;
 }
 .offer{
@@ -462,25 +460,19 @@ footer{
   }
   .header-nav--menu ul{
     padding: 0;
-    display: flex;
     list-style: none;
-    justify-content: center;
-
   }
-  .header-nav--menu ul li{
-    margin:0 2% 0 2%;
-  }
-
   .header-cont{
-    margin-top: 13%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-left: 0;
     background-size: cover;
     background-position-x: 35%;
   }
   .cont-div{
     width: 100%;
-    padding-top: 40%;
-    align-self: center;
-    justify-self: center;
+    padding: 40% 3% 3% 3%;
     text-align: center;
   }
   .cont-div ul {
@@ -491,10 +483,11 @@ footer{
     flex-direction: column;
   }
   #cont-image-about-us{
-    min-height: 500px;
+    display: none;
   }
   .about-us-article{
-    text-align: center  ;
+    padding: 3%;
+    text-align: center;
   }
   .about-us-article .cont-div-p {
     width: 100%;
@@ -504,6 +497,9 @@ footer{
     width:100%;
     padding: 5%;
     margin: 2% 0 4% 0;
+  }
+  #main-cont-offers{
+    padding: 3%;
   }
   .cont-div-block-offers{
     flex-direction: column;
@@ -536,10 +532,18 @@ footer{
     text-align: center;
     line-height: normal;
   }
+  #cont-div-form{
+    padding: 5%;
+  }
   form button{
     margin: 0 auto;
   }
   .footer-cont{
     padding: 3%;
+  }
+}
+@media screen and (max-device-width: 420px){
+  .header-nav--menu ul li{
+    margin:0 2px 0 2px;
   }
 }
