@@ -105,4 +105,12 @@ body {
 .btn p span{
   font-size: 12vw;
 }
+@media screen and (max-device-width: 700px){
+  .wrapper{
+    width: 100%;
+  }
+  .btn p span{
+    font-size: 22vw;
+  }
+}
 /*# sourceMappingURL=style.css.map */
