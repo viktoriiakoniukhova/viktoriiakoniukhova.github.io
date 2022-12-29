@@ -1,0 +1,74 @@
+[
+    {
+        "title" : "My github",
+        "href" : "https://github.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io",
+        "imgURL" : "./img/github-mark-white.png",
+        "tech" : [],
+        "colors": ["#FFFFFF", "#24292F", "#2A9048"],
+        "type": "main"
+    },
+    {
+        "title" : "GTP-3 Landing",
+        "href" : "https://melodious-cendol-fa4ef0.netlify.app/",
+        "imgURL" : "./img/gtp3.png",
+        "tech" : ["react"],
+        "colors": ["#FF4820", "#031B34", "#031B34"],
+        "type" : "regular"
+    },
+    {
+        "title" : "CoffeeShop Landing",
+        "href" : "https://viktoriiakoniukhova.github.io/cafe",
+        "imgURL" : "./img/coffee-bar.png",
+        "tech" : ["bootstrap"],
+        "colors": [ "#865E54","#663829", "#FACFA2"],
+        "type" : "regular"
+    },
+    {
+        "title" : "Clinic Landing",
+        "href" : "https://viktoriiakoniukhova.github.io/medical",
+        "imgURL" : "./img/clinic.png",
+        "tech" : ["flexbox"],
+        "colors": ["#0078AA", "#171717", "171717"],
+        "type" : "regular"
+    },
+    {
+        "title" : "Pattern Landing",
+        "href" : "https://viktoriiakoniukhova.github.io/apples",
+        "imgURL" : "./img/apples.png",
+        "tech" : ["flexbox"],
+        "colors": ["#243C0B","#3D4B58",  "#ffffff"],
+        "type" : "regular"
+    },
+    {
+        "title" : "Photographer Landing",
+        "href" : "https://viktoriiakoniukhova.github.io/photographer",
+        "imgURL" : "./img/photographer.png",
+        "tech" : ["flexbox", "grid"],
+        "colors": ["#1B2539", "#C49479", "#C49479"],
+        "type" : "regular"
+    },
+    {
+        "title" : "Finance Tracker",
+        "href" : "https://crm-system-vue3-20361.web.app/login",
+        "imgURL" : "./img/crm-system.png",
+        "tech" : ["vue 3", "materialize"],
+        "colors": ["#26A69A", "#FFA726", "#ffffff"],
+        "type" : "regular"
+    },
+    {
+        "title" : "RPC Game",
+        "href" : "https://viktoriiakoniukhova.github.io/rockpaperscissors",
+        "imgURL" : "./img/rock-paper-scissors.png",
+        "tech" : ["JS"],
+        "colors": ["#000000", "#F55536", "#B5FFE9"],
+        "type" : "regular"
+    },
+    {
+        "title" : "Capital Cards",
+        "href" : "https://viktoriiakoniukhova.github.io/flashcards/",
+        "imgURL" : "./img/capitals.png",
+        "tech" : ["SCSS"],
+        "colors": ["#F4A460", "#434D54", "#434D54"],
+        "type" : "regular"
+    }
+]
