@@ -1,0 +1,3 @@
+[submodule "gtp-3"]
+ path = gtp-3
+ url = https://github.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io/tree/main/gtp-3
