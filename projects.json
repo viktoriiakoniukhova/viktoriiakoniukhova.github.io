@@ -16,6 +16,14 @@
         "type" : "regular"
     },
     {
+        "title" : "Quizzical",
+        "href" : "https://flourishing-florentine-18435d.netlify.app/",
+        "imgURL" : "./img/quiz.png",
+        "tech" : ["react"],
+        "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
+        "type" : "regular"
+    },
+    {
         "title" : "CoffeeShop Landing",
         "href" : "https://viktoriiakoniukhova.github.io/cafe",
         "imgURL" : "./img/coffee-bar.png",
