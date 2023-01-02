@@ -11,7 +11,7 @@
         "title" : "GTP-3 Landing",
         "href" : "https://melodious-cendol-fa4ef0.netlify.app/",
         "imgURL" : "./img/gtp3.png",
-        "tech" : ["react"],
+        "tech" : ["react", "figma"],
         "colors": ["#FF4820", "#031B34", "#031B34"],
         "type" : "regular"
     },
@@ -19,7 +19,7 @@
         "title" : "Quizzical",
         "href" : "https://flourishing-florentine-18435d.netlify.app/",
         "imgURL" : "./img/quiz.png",
-        "tech" : ["react"],
+        "tech" : ["react", "figma"],
         "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
         "type" : "regular"
     },

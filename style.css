@@ -589,5 +589,8 @@ body {
 }
 
 @media screen and (max-width: 450px){
-
+    .slide__content,
+    .slide__content::before {
+        display: none;
+    }
 }
