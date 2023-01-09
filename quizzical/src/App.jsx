@@ -27,6 +27,7 @@ const App = () => {
                 startQuiz={startQuiz}
             />
             <Main 
+                onBackClick={handleStartClick} 
                 startQuiz={startQuiz}
             />
         </div>

@@ -11,13 +11,8 @@ const Main = (props) => {
     const [gameIsOver, setGameIsOver] = React.useState(false);
     const [replay, setReplay] = React.useState(false);
 
-    const [loader, setLoader] = React.useState(false);
-
     React.useEffect(() => {
-        setPoints(0)
         if(props.startQuiz){
-            setLoader(oldState => !oldState)
-
             fetch(`https://opentdb.com/api.php?amount=${NUMBER_OF_QUESTIONS}`)
                 .then((response) => response.json())
                 .then((data) => {
@@ -35,10 +30,8 @@ const Main = (props) => {
                             }
                         })
                     })
-                    setLoader(oldState => !oldState)
                 });
         }
-
     }, [props.startQuiz, replay])
 
     React.useEffect(() => {
@@ -55,31 +48,74 @@ const Main = (props) => {
             setAnswers={setAnswers}
 
             gameIsOver = {gameIsOver}
-            replay={replay}
         />)
 
-    function handleCheck() {
-        const gameIsOverNext = !gameIsOver;
-        setGameIsOver(gameIsOverNext)
+    function handleButtonClick(type) {
+        if (type==="result") {
+            setGameIsOver(true)
+        }
 
-        if(gameIsOver) {
-            setAnswers(Array.apply(null, Array(5)).map(() => 0))
-            setReplay(oldState => !oldState)
+        if (type==="return") {
+            clearData()
+
+            props.onBackClick()
+            setGameIsOver(false)
+        }
+
+        if (type==="reset") {
+            clearData()
+
+            setReplay(prevState => !prevState)
+            setGameIsOver(false)
         }
     }
     
+    function clearData() {
+        setQuestionsData([])
+        setAnswers(Array.apply(null, Array(5)).map(() => 0))
+        setPoints(0)
+    }
+
     function decode(str) {
         let txt = new DOMParser().parseFromString(str, "text/html");
         return txt.documentElement.textContent;
     }
-    
+
     return (
         <div className={`Main screen ${props.startQuiz ? '' : 'hide'}`}>
-            <div className='Main__questions'>{questions}</div>
-            <div className="Main__results">
-                <p className={gameIsOver ? "show" : "hide"}>You scrored {points}/5 correct answers</p>
-                <button className={!loader ? "show" : "hide"} onClick={handleCheck}>{gameIsOver ? "Play Again" : "Check results"}</button>
+            <div className="Main__button">
+                <button 
+                    className='Main__btn-return' 
+                    onClick={() => {handleButtonClick('return')}}
+                >
+                    &#8678;
+                </button>
             </div>
+
+            {questionsData.length > 0 
+                ?
+                <>
+                    <div className='Main__questions'>{questions}</div>
+                    <div className="Main__results">
+                    {
+                        gameIsOver
+                            ? 
+                            <>
+                                <p>You scrored {points}/5 correct answers</p>
+                                <button onClick={() => {handleButtonClick('reset')}}>Play Again</button>
+                            </>
+                            :
+                            <>
+                                <button onClick={() => {handleButtonClick('result')}}>Check results</button>
+                            </>
+                    }
+                    </div>
+                </>
+                :
+                <div className="Main__loader">
+                    <div className="loader"></div>
+                </div>
+            }
         </div>
     )
 }
