@@ -1,49 +1,123 @@
-.App {
-    margin: 0;
-    height: 100vh;
+                    /* Reset CSS */
 
-    background: var(--color-bg);
-
-    display: flex;
-    justify-content: center;
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span,
+h1, h2, h3, h4, h5, h6, p,
+a, ul, li,
+article,footer, header, nav {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
 }
 
-.App__blue-blob-container {
-    position: absolute;
-    left: -148.5px;
-    bottom: -117.5px;
-
-    z-index: 0;
-
+/* HTML5 display-role reset for older browsers */
+article, footer, header, nav, section {
+	display: block;
 }
 
-.App__yellow-blob-container {
-    position: absolute;
-    top: 0;
-    right: 0;
-
-    z-index: 0;
-
+body {
+	line-height: 1;
 }
+
+a {
+    text-decoration: none;
+}
+
+                    /* General elements style */
 
 .screen {
     display: flex;
     flex-direction: column;
-
-    position: relative;
-    z-index: 1;
-}
-
-.StartPage {
-    height: 100%;
     width: 80vw;
 
+    position: relative;
+}
+
+button {
+    padding: 1em;
+    margin: 0.5em 0;
+
+    background: var(--color-button);
+    border-radius: 15px;
+    border: none;
+
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 24px;
+    text-align: center;
+
+    color: var(--color-bg);
+}
+
+button:hover {
+    cursor: pointer;
+    background: var(--color-text);
+}
+  
+.loader {
+    border: 10px solid var(--color-bg);
+    border-top: 10px solid var(--color-button);
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+0% {
+    transform: rotate(0deg);
+}
+100% {
+    transform: rotate(360deg);
+}
+}
+
+                    /* Background style */
+body {
+    background: var(--color-bg);
+}
+
+.App {
+    display: flex;
+    justify-content: center;
+
+    background: var(--color-bg);
+}
+
+.App__blue-blob-container {
+    position: fixed;
+
+    left: -148.5px;
+    bottom: -117.5px;
+
+    opacity: 0.5;
+}
+
+.App__yellow-blob-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+
+    opacity: 0.5;
+}
+                    /* Start page style */
+.StartPage {
     align-items: center;
     justify-content: center;
+    gap: 2em;
+
+    height: 100vh;
 }
 
 .StartPage__heading {
-    margin-bottom: 3rem;
+    display: flex;
 
     font-family: var(--font-family-karla);
     font-weight: 700;
@@ -55,7 +129,8 @@
 }
 
 .StartPage__description {
-    margin-bottom: 3rem;
+    display: flex;
+    align-items: center;
 
     font-family: var(--font-family-inter);
     font-weight: 400;
@@ -67,53 +142,45 @@
 }
 
 .StartPage__button {
-    padding: 1em;
+    display: flex;
+    align-items: flex-start;
 
-    background: var(--color-button);
-    border-radius: 15px;
-    border: none;
-
-    font-family: var(--font-family-inter);
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 24px;
-    text-align: center;
-
-    color: var(--color-bg);
 }
 
-.StartPage__button:hover,
-.Main__results button:hover {
-    cursor: pointer;
-    background: var(--color-text);
+                    /* Main page style */
+.Main__button {
+    display: flex;
+    justify-content: flex-start;
+
+    margin: 0.5em 0;
 }
 
-.Main {
-    height: 1000px;
-    width: 80vw;
+.Main__btn-return {
+    padding: 0.5em;
 
-    align-items: center;
+    font-size: 40px;
+}
+
+.Main__loader {
+    position: fixed;
+    top: calc(50% - 40px);
+    left: calc(50% - 40px);
 }
 
 .Main__questions {
-    height: 85%;
-
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
 }
 
 .Main__results {
-    height: 15%;
-    
     display: flex;
     justify-content: center;
-    align-items: center;
+
+    margin: 0.5em 0;
 }
 
 .Main p {
-    padding: 1rem;
+    padding: 1em;
 
     font-family: var(--font-family-inter);
     font-weight: 700;
@@ -124,34 +191,16 @@
     color: var(--color-text);
 }
 
-.Main__results button {
-    padding: 1em;
-
-    background: var(--color-button);
-    border-radius: 15px;
-    border: none;
-
-    font-family: var(--font-family-inter);
-    font-weight: 500;
-    font-size: 22px;
-    line-height: 24px;
-    text-align: center;
-
-    color: var(--color-bg);
-}
-
 .Question {
-    width: 80vw;
-
     display: flex;
     flex-direction: column;
 
-    padding: 1rem 0;
+    padding: 1em 0;
     border-bottom: 2px solid var(--color-border);
 }
 
 .Question__heading {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 
     font-family: var(--font-family-karla);
     font-weight: 700;
@@ -163,7 +212,6 @@
 
 .Question__content {
     display: flex;
-
     align-items: center;
     justify-content: flex-start;
 }
@@ -175,10 +223,8 @@
 
 .Question__content-list > li {
     position: relative;
-    
     display: inline-block;
-    margin: 0.5rem;
-    padding: 0.5rem 1rem;
+    margin: 0.5em;
 
     min-width: 65.92px;
     border: 0.794239px solid var(--color-button);
@@ -187,6 +233,7 @@
 
 .Question__content-list > li label {
     display: block;
+    padding: 0.5em 1em;
 
     font-family: var(--font-family-inter);
     font-weight: 500;
@@ -195,6 +242,12 @@
     text-align: center;
 
     color: var(--color-text);
+
+    border-radius: 7.94239px;
+}
+
+.Question__content-list > li label:hover {
+    cursor: pointer;
 }
 
 .Question__content-list > li input {
@@ -228,6 +281,7 @@
     background: var(--color-correct);
 }
 
+                    /* Show/hide elements */
 .show {
     display: inline-block;
 }
@@ -235,45 +289,3 @@
 .hide {
     display: none;
 }
-
-/* @media screen and (max-width: 1400px) {
-    .Main {
-        margin-top: 2rem;
-        height: 1000px;
-    }
-  } */
-   
-  @media screen and (max-device-width: 1024px) {
-    .Main {
-        margin-top: 1rem;
-        height: 1200px;
-    }
-  }
-
-  @media screen and (max-device-width: 768px) {
-    .Main {
-        margin-top: 1rem;
-        height: 1300px;
-    }
-  }
-
-  @media screen and (max-device-width:420px) {
-    .Main {
-        height: 1500px;
-    }
-
-    .Main__questions {
-        height: 90%;
-    }
-
-    .Main__results {
-        height: 10%;
-    }
-  }
-
-  @media screen and (max-device-width:380px) {
-    .Main {
-        margin-top: 0.5rem;
-        height: 1900px;
-    }
-  }

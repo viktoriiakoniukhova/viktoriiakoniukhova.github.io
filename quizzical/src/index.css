@@ -13,13 +13,3 @@
     --color-correct: #94D7A2;
     --color-incorrect: #F8BCBC;
   }
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-}
-
-body {
-    height: 100vh;
-    background: var(--color-bg);
-}
