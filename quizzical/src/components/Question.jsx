@@ -19,19 +19,21 @@ const Question = (props) => {
     
     const answers = answersData.sort().map((answer, index) => {
         return   <li 
-                    key={index}
+                    key={index + props.question}
                     className={`${props.gameIsOver ? (answer === correctAnswer ? 'correct' : `incorrect`) : ``}`} 
-        >
-                    <label htmlFor={answer}>
-                    <input
-                        type="radio" 
-                        id={answer} 
-                        name={props.question}
-                        value={answer} 
-                        onChange={handleChange}
-                        checked={radioButton === answer}
-                        disabled={props.gameIsOver}
-                    />{answer}</label>
+                >
+                    <label htmlFor={answer + props.question}>
+                        <input
+                            type="radio" 
+                            id={answer + props.question} 
+                            name={props.question}
+                            value={answer} 
+                            onChange={handleChange}
+                            checked={radioButton === answer}
+                            disabled={props.gameIsOver}
+                        />
+                        {answer}
+                    </label>
                 </li>
     })
 
