@@ -9,7 +9,11 @@ import yellowBlob from './img/yellow-blob.png'
 const App = () => {
 
     const [startQuiz, setStartQuiz] = React.useState(false);
-    
+    const [options, setOptions] = React.useState({
+        categoryID: "9",
+        difficulty: "easy"
+    })
+
     function handleStartClick() {
         setStartQuiz(oldState => !oldState )
     }
@@ -25,10 +29,12 @@ const App = () => {
             <StartPage 
                 onStartClick={handleStartClick} 
                 startQuiz={startQuiz}
+                setOptions={setOptions}
             />
             <Main 
                 onBackClick={handleStartClick} 
                 startQuiz={startQuiz}
+                options={options}
             />
         </div>
     )

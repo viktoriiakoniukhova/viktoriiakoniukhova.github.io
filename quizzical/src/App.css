@@ -39,6 +39,25 @@ a {
     position: relative;
 }
 
+select {
+    padding: 1em;
+    margin: 0.5em 0;
+
+    max-width: 300px;
+    text-overflow: ellipsis;
+
+    background: var(--color-bg);
+    border: 0.794239px solid var(--color-button);
+    border-radius: 7.94239px;
+
+    font-family: var(--font-family-inter);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: start;
+    color: var(--color-text);
+}
+
 button {
     padding: 1em;
     margin: 0.5em 0;
@@ -141,10 +160,14 @@ body {
     color: var(--color-text);
 }
 
+.StartPage__selections {
+    display: flex;
+    gap: 1em;
+}
+
 .StartPage__button {
     display: flex;
     align-items: flex-start;
-
 }
 
                     /* Main page style */
@@ -156,8 +179,10 @@ body {
 }
 
 .Main__btn-return {
-    padding: 0.5em;
+    display: flex;
+    align-items: center;
 
+    padding: 0.5em;
     font-size: 40px;
 }
 
@@ -288,4 +313,16 @@ body {
 
 .hide {
     display: none;
+}
+
+                    /* Media queries */
+@media screen and (max-width: 500px) {
+    .StartPage__selections {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    select {
+        min-width: 300px;
+    }
 }

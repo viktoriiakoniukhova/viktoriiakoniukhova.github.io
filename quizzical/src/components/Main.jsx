@@ -2,7 +2,10 @@ import React from 'react';
 import Question from './Question'
 
 const Main = (props) => {
-    const NUMBER_OF_QUESTIONS = 5;
+    const NUMBER_OF_QUESTIONS = 5
+    const categoryID = props.options.categoryID
+    const difficulty = props.options.difficulty
+    const url = `https://opentdb.com/api.php?amount=${NUMBER_OF_QUESTIONS}&category=${categoryID}&difficulty=${difficulty}`
 
     const [questionsData, setQuestionsData] = React.useState([]);
     const [answers, setAnswers] = React.useState(Array.apply(null, Array(5)).map(() => 0))
@@ -13,7 +16,7 @@ const Main = (props) => {
 
     React.useEffect(() => {
         if(props.startQuiz){
-            fetch(`https://opentdb.com/api.php?amount=${NUMBER_OF_QUESTIONS}`)
+            fetch(url)
                 .then((response) => response.json())
                 .then((data) => {
                     setQuestionsData(() => {
@@ -32,7 +35,7 @@ const Main = (props) => {
                     })
                 });
         }
-    }, [props.startQuiz, replay])
+    }, [props.startQuiz, replay, url])
 
     React.useEffect(() => {
         setPoints(answers.reduce((prev, curr) => prev + curr), 0)

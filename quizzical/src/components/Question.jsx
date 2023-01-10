@@ -8,7 +8,7 @@ const Question = (props) => {
     function handleChange(event) {
         const {value, checked} = event.target
         setRadioButton(value)
-            console.log(checked);
+
         props.setAnswers(oldAnswers => 
             oldAnswers.map((answer, index) => 
                 index === props.questionIndex 
