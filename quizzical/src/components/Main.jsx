@@ -1,5 +1,6 @@
 import React from 'react';
 import Question from './Question'
+import turnBack from '../img/back-arrow.png'
 
 const Main = (props) => {
     const NUMBER_OF_QUESTIONS = 5
@@ -91,7 +92,7 @@ const Main = (props) => {
                     className='Main__btn-return' 
                     onClick={() => {handleButtonClick('return')}}
                 >
-                    &#8678;
+                    <img src={turnBack} alt="return" />
                 </button>
             </div>
 
