@@ -27,7 +27,7 @@ const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
 
-data.map(({title, href, imgURL, tech, colors, type}) => generateSlide(title, href, imgURL, tech, colors, type))
+data.map(({title, href, imgURL, imgURLs, thumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
     spaceBetween: 10,
@@ -89,33 +89,28 @@ allLinks.forEach(link => link.addEventListener('click', ev => {
 
     // Generate slide
 
-function generateSlide(title, href, imgURL, tech, colors, type) {
+function generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type) {
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
     const slideContent = createSlideContent(colors, title, href, tech);
-
-    const slideImage = type === 'main'
-        ?  createSlideImage(slide, href, title, imgURL, true)
-        :  createSlideImage(slide, href, title, imgURL)
+    const slideImage = createSlideImage(slide, href, title, imgURL, imgURLs, type)
 
     slide.append(slideImage, slideContent)
     swiperWrapper.append(slide)
 
-    type === 'main' 
-        ? swiperThumbsWrapper.append(createSlideThumb(imgURL, true))
-        : swiperThumbsWrapper.append(createSlideThumb(imgURL))
+    swiperThumbsWrapper.append(createSlideThumb(thumbURLs, type))
 
     // Hide "More Info" panel
     slideContent.style.top = -slideContent.offsetHeight + 'px'
 }
 
-function createSlideImage(slide, href, title, imgURL, main = false) {
+function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
 
     /* Clickable slide Image*/
 
     const slide__image = document.createElement('div')
-    slide__image.className = main ? 'slide__main_image' : 'slide__image'
+    slide__image.className = type === 'main' ? 'slide__main_image' : 'slide__image'
 
     const slide__image_link = document.createElement('a')
     slide__image_link.setAttribute('href', href)
@@ -125,14 +120,21 @@ function createSlideImage(slide, href, title, imgURL, main = false) {
     const slide__image_img = document.createElement('img')
     slide__image_img.src = imgURL
 
-    slide__image_link.append(slide__image_img)
+    if(type === 'regular'){
+        const slide__picture = makeResponsiveImage(slide__image_img, imgURLs)
+        slide__image_link.append(slide__picture)
+    }
+    else {
+        slide__image_link.append(slide__image_img)
+
+    }
 
     slide__image.append(slide__image_link)
     slide.append(slide__image)
 
     /* Main slide (github logo) animation */
 
-    if(main) {
+    if(type === 'main') {
         slide.addEventListener('mouseenter', () => {
             slide__image_link.classList.add('heartbeat')
         })
@@ -205,19 +207,22 @@ function createSlideContent(colors, title, href, tech) {
     return slide__content
 }
 
-function createSlideThumb(imgURL, main = false) {
+function createSlideThumb(thumbURLs, type) {
     /* Non-clickable slide Image */
 
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
     const slide__image = document.createElement('div')
-    slide__image.className = main ? 'slide__main_image' : 'slide__image_thumb'
+    slide__image.className = type === 'main' ? 'slide__main_image' : 'slide__image_thumb'
     slide.setAttribute('data-swiper-parallax-opacity', '0.5')
     // slide__image.className = 'slide__image_thumb'
 
     const slide__image_img = document.createElement('img')
-    slide__image_img.src = imgURL
+    slide__image_img.src = thumbURLs.large
+
+    if(type === 'regular')
+        makeResponsiveImage(slide__image_img, thumbURLs)
 
     slide__image.append(slide__image_img)
     slide.append(slide__image)
@@ -281,4 +286,20 @@ function setContentAnimation(heightOfContent, container) {
 
 function setSwiperThemeColor(color) {
     swiperContainer.style.setProperty('--swiper-theme-color', color);
+}
+
+function makeResponsiveImage(slideImage, urls) {
+    const picture = document.createElement('picture')
+
+    const sourceSmall = document.createElement('source')
+    sourceSmall.setAttribute('srcset', urls.small)
+    sourceSmall.setAttribute('media', '(max-width: 450px)')
+
+    const sourceMedium = document.createElement('source')
+    sourceMedium.setAttribute('srcset', urls.medium)
+    sourceMedium.setAttribute('media', '(max-width: 850px)')
+
+    picture.append(sourceSmall, sourceMedium, slideImage)
+
+    return picture;
 }
