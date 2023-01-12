@@ -27,8 +27,7 @@ const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
 
-data.map(({title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type}) => 
-    generateSlide(title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type))
+data.map(({title, href, imgURL, imgURLs, thumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
     spaceBetween: 10,
@@ -90,23 +89,23 @@ allLinks.forEach(link => link.addEventListener('click', ev => {
 
     // Generate slide
 
-function generateSlide(title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type) {
+function generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type) {
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
     const slideContent = createSlideContent(colors, title, href, tech);
-    const slideImage = createSlideImage(slide, href, title, pngURLs, webpURLs, type)
+    const slideImage = createSlideImage(slide, href, title, imgURL, imgURLs, type)
 
     slide.append(slideImage, slideContent)
     swiperWrapper.append(slide)
 
-    swiperThumbsWrapper.append(createSlideThumb(pngThumbURLs, webpThumbURLs, type))
+    swiperThumbsWrapper.append(createSlideThumb(thumbURLs, type))
 
     // Hide "More Info" panel
     slideContent.style.top = -slideContent.offsetHeight + 'px'
 }
 
-function createSlideImage(slide, href, title, pngURLs, webpURLs, type) {
+function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
 
     /* Clickable slide Image*/
 
@@ -119,6 +118,7 @@ function createSlideImage(slide, href, title, pngURLs, webpURLs, type) {
     slide__image_link.setAttribute('target', ' _blank')
 
     const slide__image_img = document.createElement('img')
+    slide__image_img.src = imgURL
 
     const slide__picture = type === 'regular' 
         ? makeResponsiveImage(slide__image_img, pngURLs, webpURLs)
@@ -203,7 +203,7 @@ function createSlideContent(colors, title, href, tech) {
     return slide__content
 }
 
-function createSlideThumb(pngThumbURLs, webpThumbURLs, type) {
+function createSlideThumb(thumbURLs, type) {
     /* Non-clickable slide Image */
 
     const slide = document.createElement('div')
@@ -215,6 +215,7 @@ function createSlideThumb(pngThumbURLs, webpThumbURLs, type) {
     // slide__image.className = 'slide__image_thumb'
 
     const slide__image_img = document.createElement('img')
+    slide__image_img.src = thumbURLs.large
 
     const slide__picture = type === 'regular' 
     ? makeResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
@@ -231,44 +232,44 @@ function setContentAnimation(heightOfContent, container) {
 
     const keyframes = 
     `
-    @-webpkit-keyframes slide-bottom {
+    @-webkit-keyframes slide-bottom {
         0% {
-          -webpkit-transform: translateY(0);
+          -webkit-transform: translateY(0);
                   transform: translateY(0);
         }
         100% {
-          -webpkit-transform: translateY(${heightOfContent}px);
+          -webkit-transform: translateY(${heightOfContent}px);
                   transform: translateY(${heightOfContent}px);
         }
       }
       @keyframes slide-bottom {
         0% {
-          -webpkit-transform: translateY(0);
+          -webkit-transform: translateY(0);
                   transform: translateY(0);
         }
         100% {
-          -webpkit-transform: translateY(${heightOfContent}px);
+          -webkit-transform: translateY(${heightOfContent}px);
                   transform: translateY(${heightOfContent}px);
         }
       }
 
-    @-webpkit-keyframes slide-top {
+    @-webkit-keyframes slide-top {
     0% {
-        -webpkit-transform: translateY(${heightOfContent}px);
+        -webkit-transform: translateY(${heightOfContent}px);
                 transform: translateY(${heightOfContent}px);
     }
     100% {
-        -webpkit-transform: translateY(0);
+        -webkit-transform: translateY(0);
                 transform: translateY(0);
     }
     }
     @keyframes slide-top {
     0% {
-        -webpkit-transform: translateY(${heightOfContent}px);
+        -webkit-transform: translateY(${heightOfContent}px);
                 transform: translateY(${heightOfContent}px);
     }
     100% {
-        -webpkit-transform: translateY(0);
+        -webkit-transform: translateY(0);
                 transform: translateY(0);
     }
     }
@@ -284,8 +285,7 @@ function setSwiperThemeColor(color) {
     swiperContainer.style.setProperty('--swiper-theme-color', color);
 }
 
-function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
-
+function makeResponsiveImage(slideImage, urls) {
     const picture = document.createElement('picture')
 
     // const webpSourceSmall = document.createElement('source')

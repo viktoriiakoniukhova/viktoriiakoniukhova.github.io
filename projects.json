@@ -2,23 +2,14 @@
     {
         "title" : "My github",
         "href" : "https://github.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io",
-        "pngURLs" : {
-            "large" : "./_assets/png/github-mark-white.png",
+        "imgURL" : "./img/github-mark-white.png",
+        "imgURLs" : {
+            "large" : "./img/github-mark-white.png",
             "medium" : "",
             "small": ""
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/github-mark-white.png",
-            "medium" : "",
-            "small": ""
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/github-mark-white.webp",
-            "medium" : "",
-            "small": ""
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/github-mark-white.webp",
+        "thumbURLs" : {
+            "large" : "./img/thumbs/github-mark-white.png",
             "medium" : "",
             "small": ""
         },
@@ -29,25 +20,16 @@
     {
         "title" : "GTP-3 Landing",
         "href" : "https://melodious-cendol-fa4ef0.netlify.app/",
-        "pngURLs" : {
-            "large" : "./_assets/png/gtp3.png",
-            "medium" : "./_assets/png/gtp3-medium.png",
-            "small": "./_assets/png/gtp3-small.png"
+        "imgURL" : "./img/gtp3.png",
+        "imgURLs" : {
+            "large" : "./img/gtp3.png",
+            "medium" : "./img/gtp3-medium.png",
+            "small": "./img/gtp3-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/gtp3.png",
-            "medium" : "./_assets/png/thumbs/gtp3-medium.png",
-            "small": "./_assets/png/thumbs/gtp3-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/gtp3.webp",
-            "medium" : "./_assets/webp/gtp3-medium.webp",
-            "small": "./_assets/webp/gtp3-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/gtp3.webp",
-            "medium" : "./_assets/webp/thumbs/gtp3-medium.webp",
-            "small": "./_assets/webp/thumbs/gtp3-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/gtp3.png",
+            "medium" : "./img/thumbs/gtp3-medium.png",
+            "small": "./img/thumbs/gtp3-small.png"
         },
         "tech" : ["react", "figma"],
         "colors": ["#FF4820", "#031B34", "#031B34"],
@@ -56,25 +38,16 @@
     {
         "title" : "Quizzical",
         "href" : "https://flourishing-florentine-18435d.netlify.app/",
-        "pngURLs" : {
-            "large" : "./_assets/png/quiz.png",
-            "medium" : "./_assets/png/quiz-medium.png",
-            "small": "./_assets/png/quiz-small.png"
+        "imgURL" : "./img/quiz.png",
+        "imgURLs" : {
+            "large" : "./img/quiz.png",
+            "medium" : "./img/quiz-medium.png",
+            "small": "./img/quiz-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/quiz.png",
-            "medium" : "./_assets/png/thumbs/quiz-medium.png",
-            "small": "./_assets/png/thumbs/quiz-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/quiz.webp",
-            "medium" : "./_assets/webp/quiz-medium.webp",
-            "small": "./_assets/webp/quiz-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/quiz.webp",
-            "medium" : "./_assets/webp/thumbs/quiz-medium.webp",
-            "small": "./_assets/webp/thumbs/quiz-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/quiz.png",
+            "medium" : "./img/thumbs/quiz-medium.png",
+            "small": "./img/thumbs/quiz-small.png"
         },
         "tech" : ["react", "figma"],
         "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
@@ -83,25 +56,16 @@
     {
         "title" : "CoffeeShop Landing",
         "href" : "https://viktoriiakoniukhova.github.io/cafe",
-        "pngURLs" : {
-            "large" : "./_assets/png/coffee-bar.png",
-            "medium" : "./_assets/png/coffee-bar-medium.png",
-            "small": "./_assets/png/coffee-bar-small.png"
+        "imgURL" : "./img/coffee-bar.png",
+        "imgURLs" : {
+            "large" : "./img/coffee-bar.png",
+            "medium" : "./img/coffee-bar-medium.png",
+            "small": "./img/coffee-bar-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/coffee-bar.png",
-            "medium" : "./_assets/png/thumbs/coffee-bar-medium.png",
-            "small": "./_assets/png/thumbs/coffee-bar-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/coffee-bar.webp",
-            "medium" : "./_assets/webp/coffee-bar-medium.webp",
-            "small": "./_assets/webp/coffee-bar-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/coffee-bar.webp",
-            "medium" : "./_assets/webp/thumbs/coffee-bar-medium.webp",
-            "small": "./_assets/webp/thumbs/coffee-bar-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/coffee-bar.png",
+            "medium" : "./img/thumbs/coffee-bar-medium.png",
+            "small": "./img/thumbs/coffee-bar-small.png"
         },
         "tech" : ["bootstrap"],
         "colors": [ "#865E54","#663829", "#FACFA2"],
@@ -110,25 +74,16 @@
     {
         "title" : "Clinic Landing",
         "href" : "https://viktoriiakoniukhova.github.io/medical",
-        "pngURLs" : {
-            "large" : "./_assets/png/clinic.png",
-            "medium" : "./_assets/png/clinic-medium.png",
-            "small": "./_assets/png/clinic-small.png"
+        "imgURL" : "./img/clinic.png",
+        "imgURLs" : {
+            "large" : "./img/clinic.png",
+            "medium" : "./img/clinic-medium.png",
+            "small": "./img/clinic-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/clinic.png",
-            "medium" : "./_assets/png/thumbs/clinic-medium.png",
-            "small": "./_assets/png/thumbs/clinic-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/clinic.webp",
-            "medium" : "./_assets/webp/clinic-medium.webp",
-            "small": "./_assets/webp/clinic-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/clinic.webp",
-            "medium" : "./_assets/webp/thumbs/clinic-medium.webp",
-            "small": "./_assets/webp/thumbs/clinic-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/clinic.png",
+            "medium" : "./img/thumbs/clinic-medium.png",
+            "small": "./img/thumbs/clinic-small.png"
         },
         "tech" : ["flexbox"],
         "colors": ["#0078AA", "#171717", "171717"],
@@ -137,25 +92,16 @@
     {
         "title" : "Pattern Landing",
         "href" : "https://viktoriiakoniukhova.github.io/apples",
-        "pngURLs" : {
-            "large" : "./_assets/png/apples.png",
-            "medium" : "./_assets/png/apples-medium.png",
-            "small": "./_assets/png/apples-small.png"
+        "imgURL" : "./img/apples.png",
+        "imgURLs" : {
+            "large" : "./img/apples.png",
+            "medium" : "./img/apples-medium.png",
+            "small": "./img/apples-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/apples.png",
-            "medium" : "./_assets/png/thumbs/apples-medium.png",
-            "small": "./_assets/png/thumbs/apples-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/apples.webp",
-            "medium" : "./_assets/webp/apples-medium.webp",
-            "small": "./_assets/webp/apples-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/apples.webp",
-            "medium" : "./_assets/webp/thumbs/apples-medium.webp",
-            "small": "./_assets/webp/thumbs/apples-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/apples.png",
+            "medium" : "./img/thumbs/apples-medium.png",
+            "small": "./img/thumbs/apples-small.png"
         },
         "tech" : ["flexbox"],
         "colors": ["#243C0B","#3D4B58",  "#ffffff"],
@@ -164,25 +110,16 @@
     {
         "title" : "Photographer Landing",
         "href" : "https://viktoriiakoniukhova.github.io/photographer",
-        "pngURLs" : {
-            "large" : "./_assets/png/photographer.png",
-            "medium" : "./_assets/png/photographer-medium.png",
-            "small": "./_assets/png/photographer-small.png"
+        "imgURL" : "./img/photographer.png",
+        "imgURLs" : {
+            "large" : "./img/photographer.png",
+            "medium" : "./img/photographer-medium.png",
+            "small": "./img/photographer-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/photographer.png",
-            "medium" : "./_assets/png/thumbs/photographer-medium.png",
-            "small": "./_assets/png/thumbs/photographer-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/photographer.webp",
-            "medium" : "./_assets/webp/photographer-medium.webp",
-            "small": "./_assets/webp/photographer-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/photographer.webp",
-            "medium" : "./_assets/webp/thumbs/photographer-medium.webp",
-            "small": "./_assets/webp/thumbs/photographer-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/photographer.png",
+            "medium" : "./img/thumbs/photographer-medium.png",
+            "small": "./img/thumbs/photographer-small.png"
         },
         "tech" : ["flexbox", "grid"],
         "colors": ["#1B2539", "#C49479", "#C49479"],
@@ -190,24 +127,15 @@
     },
     {
         "title" : "Finance Tracker",
-        "href" : "https://crm-system-vue3-20361.webp.app/login",
-        "pngURLs" : {
-            "large" : "./_assets/png/crm-system.png",
+        "href" : "https://crm-system-vue3-20361.web.app/login",
+        "imgURL" : "./img/crm-system.png",
+        "imgURLs" : {
+            "large" : "./img/crm-system.png",
             "medium" : "",
             "small": ""
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/crm-system.png",
-            "medium" : "",
-            "small": ""
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/crm-system.webp",
-            "medium" : "",
-            "small": ""
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/crm-system.webp",
+        "thumbURLs" : {
+            "large" : "./img/thumbs/crm-system.png",
             "medium" : "",
             "small": ""
         },
@@ -218,25 +146,16 @@
     {
         "title" : "RPC Game",
         "href" : "https://viktoriiakoniukhova.github.io/rockpaperscissors",
-        "pngURLs" : {
-            "large" : "./_assets/png/rock-paper-scissors.png",
-            "medium" : "./_assets/png/rock-paper-scissors-medium.png",
-            "small": "./_assets/png/rock-paper-scissors-small.png"
+        "imgURL" : "./img/rock-paper-scissors.png",
+        "imgURLs" : {
+            "large" : "./img/rock-paper-scissors.png",
+            "medium" : "./img/rock-paper-scissors-medium.png",
+            "small": "./img/rock-paper-scissors-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/rock-paper-scissors.png",
-            "medium" : "./_assets/png/thumbs/rock-paper-scissors-medium.png",
-            "small": "./_assets/png/thumbs/rock-paper-scissors-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/rock-paper-scissors.webp",
-            "medium" : "./_assets/webp/rock-paper-scissors-medium.webp",
-            "small": "./_assets/webp/rock-paper-scissors-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/rock-paper-scissors.webp",
-            "medium" : "./_assets/webp/thumbs/rock-paper-scissors-medium.webp",
-            "small": "./_assets/webp/thumbs/rock-paper-scissors-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/rock-paper-scissors.png",
+            "medium" : "./img/thumbs/rock-paper-scissors-medium.png",
+            "small": "./img/thumbs/rock-paper-scissors-small.png"
         },
         "tech" : ["JS"],
         "colors": ["#000000", "#F55536", "#B5FFE9"],
@@ -245,25 +164,16 @@
     {
         "title" : "Capital Cards",
         "href" : "https://viktoriiakoniukhova.github.io/flashcards/",
-        "pngURLs" : {
-            "large" : "./_assets/png/capitals.png",
-            "medium" : "./_assets/png/capitals-medium.png",
-            "small": "./_assets/png/capitals-small.png"
+        "imgURL" : "./img/capitals.png",
+        "imgURLs" : {
+            "large" : "./img/capitals.png",
+            "medium" : "./img/capitals-medium.png",
+            "small": "./img/capitals-small.png"
         },
-        "pngThumbURLs" : {
-            "large" : "./_assets/png/thumbs/capitals.png",
-            "medium" : "./_assets/png/thumbs/capitals-medium.png",
-            "small": "./_assets/png/thumbs/capitals-small.png"
-        },
-        "webpURLs" : {
-            "large" : "./_assets/webp/capitals.webp",
-            "medium" : "./_assets/webp/capitals-medium.webp",
-            "small": "./_assets/webp/capitals-small.webp"
-        },
-        "webpThumbURLs" : {
-            "large" : "./_assets/webp/thumbs/capitals.webp",
-            "medium" : "./_assets/webp/thumbs/capitals-medium.webp",
-            "small": "./_assets/webp/thumbs/capitals-small.webp"
+        "thumbURLs" : {
+            "large" : "./img/thumbs/capitals.png",
+            "medium" : "./img/thumbs/capitals-medium.png",
+            "small": "./img/thumbs/capitals-small.png"
         },
         "tech" : ["SCSS"],
         "colors": ["#F4A460", "#434D54", "#434D54"],

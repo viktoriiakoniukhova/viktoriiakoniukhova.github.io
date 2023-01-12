@@ -291,8 +291,7 @@ body {
 }
 
 .swiper__thumbs .slide__main_image img {
-    object-fit: cover;
-    width: 2em;
+    height: 50%;
 }
 
 .swiper__thumbs  .swiper-wrapper .swiper-slide {
@@ -302,12 +301,6 @@ body {
     opacity: 1;
 }
 
-picture {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
 /* ===== Slide-In animation for content ===== */
 
 .slide-bottom {
