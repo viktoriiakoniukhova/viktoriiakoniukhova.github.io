@@ -305,7 +305,9 @@ function makeResponsiveImage(slideImage, pngURLs) {
     pngSourceMedium.setAttribute('media', '(max-width: 850px)')
 
     slideImage.src = pngURLs.large
-    slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
+    
+    const pngUrl = pngURLs.large;
+    slideImage.alt = pngUrl.substring(pngUrl.lastIndexOf('/') + 1, pngUrl.lastIndexOf('.'))
 
     picture.append(pngSourceSmall, pngSourceMedium, slideImage)
 
@@ -320,9 +322,10 @@ function makeNonResponsiveImage(slideImage, pngURLs) {
     // webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
 
     // picture.append(webpSourceLarge)
-
     slideImage.src = pngURLs.large
-    slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
+
+    const pngUrl = pngURLs.large;
+    slideImage.alt = pngUrl.substring(pngUrl.lastIndexOf('/') + 1, pngUrl.lastIndexOf('.'))
 
     picture.append(slideImage)
 
