@@ -27,7 +27,7 @@ const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
 
-data.map(({title, href, imgURL, imgURLs, thumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type))
+data.map(({title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
     spaceBetween: 10,
@@ -89,7 +89,7 @@ allLinks.forEach(link => link.addEventListener('click', ev => {
 
     // Generate slide
 
-function generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type) {
+function generateSlide(title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type) {
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
@@ -99,7 +99,7 @@ function generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, ty
     slide.append(slideImage, slideContent)
     swiperWrapper.append(slide)
 
-    swiperThumbsWrapper.append(createSlideThumb(thumbURLs, type))
+    swiperThumbsWrapper.append(createSlideThumb(pngThumbURLs, type))
 
     // Hide "More Info" panel
     slideContent.style.top = -slideContent.offsetHeight + 'px'
@@ -121,8 +121,8 @@ function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
     slide__image_img.src = imgURL
 
     const slide__picture = type === 'regular' 
-        ? makeResponsiveImage(slide__image_img, pngURLs, webpURLs)
-        : makeNonResponsiveImage(slide__image_img, pngURLs, webpURLs)
+        ? makeResponsiveImage(slide__image_img, pngURLs)
+        : makeNonResponsiveImage(slide__image_img, pngURLs)
 
     slide__image_link.append(slide__picture)
     slide__image.append(slide__image_link)
@@ -203,7 +203,7 @@ function createSlideContent(colors, title, href, tech) {
     return slide__content
 }
 
-function createSlideThumb(thumbURLs, type) {
+function createSlideThumb(pngThumbURLs, type) {
     /* Non-clickable slide Image */
 
     const slide = document.createElement('div')
@@ -215,11 +215,11 @@ function createSlideThumb(thumbURLs, type) {
     // slide__image.className = 'slide__image_thumb'
 
     const slide__image_img = document.createElement('img')
-    slide__image_img.src = thumbURLs.large
+    slide__image_img.src = pngThumbURLs.large
 
     const slide__picture = type === 'regular' 
-    ? makeResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
-    : makeNonResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
+    ? makeResponsiveImage(slide__image_img, pngThumbURLs)
+    : makeNonResponsiveImage(slide__image_img, pngThumbURLs)
     
     slide__image.append(slide__picture)
     slide.append(slide__image)
@@ -285,22 +285,8 @@ function setSwiperThemeColor(color) {
     swiperContainer.style.setProperty('--swiper-theme-color', color);
 }
 
-function makeResponsiveImage(slideImage, urls) {
+function makeResponsiveImage(slideImage, pngURLs) {
     const picture = document.createElement('picture')
-
-    // const webpSourceSmall = document.createElement('source')
-    // webpSourceSmall.setAttribute('srcset', webpURLs.small)
-    // webpSourceSmall.setAttribute('media', '(max-width: 450px)')
-
-    // const webpSourceMedium = document.createElement('source')
-    // webpSourceMedium.setAttribute('srcset', webpURLs.medium)
-    // webpSourceMedium.setAttribute('media', '(max-width: 850px)')
-
-    // const webpSourceLarge = document.createElement('source')
-    // webpSourceLarge.setAttribute('srcset', webpURLs.large)
-    // webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
-
-    // picture.append(webpSourceSmall, webpSourceMedium, webpSourceLarge)
 
     const pngSourceSmall = document.createElement('source')
     pngSourceSmall.setAttribute('srcset', pngURLs.small)
@@ -318,7 +304,7 @@ function makeResponsiveImage(slideImage, urls) {
     return picture;
 }
 
-function makeNonResponsiveImage(slideImage, pngURLs, webpURLs) {
+function makeNonResponsiveImage(slideImage, pngURLs) {
     const picture = document.createElement('picture')
 
     // const webpSourceLarge = document.createElement('source')
