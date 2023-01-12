@@ -304,6 +304,10 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
     webpSourceMedium.setAttribute('srcset', webpURLs.medium)
     webpSourceMedium.setAttribute('media', '(max-width: 850px)')
 
+    const webpSourceLarge = document.createElement('source')
+    webpSourceLarge.setAttribute('srcset', webpURLs.large)
+    webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
+
     const pngSourceSmall = document.createElement('source')
     pngSourceSmall.setAttribute('srcset', pngURLs.small)
     pngSourceSmall.setAttribute('media', '(max-width: 450px)')
@@ -312,14 +316,10 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
     pngSourceMedium.setAttribute('srcset', pngURLs.medium)
     pngSourceMedium.setAttribute('media', '(max-width: 850px)')
 
-    const pngSourceLarge = document.createElement('source')
-    pngSourceLarge.setAttribute('srcset', pngURLs.large)
-    pngSourceLarge.setAttribute('media', '(max-width: 1020px)')
+    slideImage.src = pngURLs.large
+    slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
 
-    slideImage.src = webpURLs.large
-    slideImage.alt = webpURLs.large.substring(0, webpURLs.large.indexOf('.'))
-
-    picture.append(pngSourceSmall, pngSourceMedium, slideImage)
+    picture.append(webpSourceSmall, webpSourceMedium, webpSourceLarge ,pngSourceSmall, pngSourceMedium, slideImage)
 
     return picture;
 }
@@ -327,14 +327,14 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
 function makeNonResponsiveImage(slideImage, pngURLs, webpURLs) {
     const picture = document.createElement('picture')
 
-    const pngSourceLarge = document.createElement('source')
-    pngSourceLarge.setAttribute('srcset', pngURLs.large)
-    pngSourceLarge.setAttribute('media', '(max-width: 1020px)')
+    const webpSourceLarge = document.createElement('source')
+    webpSourceLarge.setAttribute('srcset', webpURLs.large)
+    webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
 
-    slideImage.src = webpURLs.large
-    slideImage.alt = webpURLs.large.substring(0, webpURLs.large.indexOf('.'))
+    slideImage.src = pngURLs.large
+    slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
 
-    picture.append(slideImage)
+    picture.append(webpSourceLarge, slideImage)
 
     return picture;
 }
