@@ -27,7 +27,7 @@ const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
 
-data.map(({title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type))
+data.map(({title, href, pngURLs, pngThumbURLs, tech, colors, type}) => generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
     spaceBetween: 10,
@@ -89,12 +89,12 @@ allLinks.forEach(link => link.addEventListener('click', ev => {
 
     // Generate slide
 
-function generateSlide(title, href, imgURL, imgURLs, pngThumbURLs, tech, colors, type) {
+function generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type) {
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
     const slideContent = createSlideContent(colors, title, href, tech);
-    const slideImage = createSlideImage(slide, href, title, imgURL, imgURLs, type)
+    const slideImage = createSlideImage(slide, href, title, pngURLs, type)
 
     slide.append(slideImage, slideContent)
     swiperWrapper.append(slide)
@@ -105,7 +105,7 @@ function generateSlide(title, href, imgURL, imgURLs, pngThumbURLs, tech, colors,
     slideContent.style.top = -slideContent.offsetHeight + 'px'
 }
 
-function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
+function createSlideImage(slide, href, title, pngURLs, type) {
 
     /* Clickable slide Image*/
 
@@ -118,7 +118,7 @@ function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
     slide__image_link.setAttribute('target', ' _blank')
 
     const slide__image_img = document.createElement('img')
-    slide__image_img.src = imgURL
+    slide__image_img.src = pngURLs.large
 
     const slide__picture = type === 'regular' 
         ? makeResponsiveImage(slide__image_img, pngURLs)

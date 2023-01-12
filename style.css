@@ -291,7 +291,8 @@ body {
 }
 
 .swiper__thumbs .slide__main_image img {
-    height: 50%;
+    object-fit: cover;
+    width: 2em;
 }
 
 .swiper__thumbs  .swiper-wrapper .swiper-slide {
