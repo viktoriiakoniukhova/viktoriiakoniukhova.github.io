@@ -1,4 +1,12 @@
-import data from './projects.json' assert {type: 'json'};
+// import data from './projects.json' assert {type: 'json'};
+
+const url = 'https://raw.githubusercontent.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io/main/projects.json'
+
+const request = new XMLHttpRequest();
+request.open("GET", url , false);
+request.send(null);
+
+const data = JSON.parse(request.responseText)
 
     // Delete navigation blocks
 const prevArrow = document.querySelector('.swiper-button-prev')
