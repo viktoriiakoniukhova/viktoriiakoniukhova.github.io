@@ -27,7 +27,8 @@ const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
 
-data.map(({title, href, imgURL, imgURLs, thumbURLs, tech, colors, type}) => generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type))
+data.map(({title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type}) => 
+    generateSlide(title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
     spaceBetween: 10,
@@ -89,23 +90,23 @@ allLinks.forEach(link => link.addEventListener('click', ev => {
 
     // Generate slide
 
-function generateSlide(title, href, imgURL, imgURLs, thumbURLs, tech, colors, type) {
+function generateSlide(title, href, pngURLs, pngThumbURLs, webpURLs, webpThumbURLs, tech, colors, type) {
     const slide = document.createElement('div')
     slide.classList.add('swiper-slide', 'slide')
 
     const slideContent = createSlideContent(colors, title, href, tech);
-    const slideImage = createSlideImage(slide, href, title, imgURL, imgURLs, type)
+    const slideImage = createSlideImage(slide, href, title, pngURLs, webpURLs, type)
 
     slide.append(slideImage, slideContent)
     swiperWrapper.append(slide)
 
-    swiperThumbsWrapper.append(createSlideThumb(thumbURLs, type))
+    swiperThumbsWrapper.append(createSlideThumb(pngThumbURLs, webpThumbURLs, type))
 
     // Hide "More Info" panel
     slideContent.style.top = -slideContent.offsetHeight + 'px'
 }
 
-function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
+function createSlideImage(slide, href, title, pngURLs, webpURLs, type) {
 
     /* Clickable slide Image*/
 
@@ -118,15 +119,14 @@ function createSlideImage(slide, href, title, imgURL, imgURLs, type) {
     slide__image_link.setAttribute('target', ' _blank')
 
     const slide__image_img = document.createElement('img')
-    slide__image_img.src = imgURL
 
     if(type === 'regular'){
-        const slide__picture = makeResponsiveImage(slide__image_img, imgURLs)
+        const slide__picture = makeResponsiveImage(slide__image_img, pngURLs, webpURLs)
         slide__image_link.append(slide__picture)
     }
     else {
-        slide__image_link.append(slide__image_img)
-
+        const slide__picture = makeNonResponsiveImage(slide__image_img, pngURLs, webpURLs)
+        slide__image_link.append(slide__picture)
     }
 
     slide__image.append(slide__image_link)
@@ -207,7 +207,7 @@ function createSlideContent(colors, title, href, tech) {
     return slide__content
 }
 
-function createSlideThumb(thumbURLs, type) {
+function createSlideThumb(pngThumbURLs, webpThumbURLs, type) {
     /* Non-clickable slide Image */
 
     const slide = document.createElement('div')
@@ -219,12 +219,16 @@ function createSlideThumb(thumbURLs, type) {
     // slide__image.className = 'slide__image_thumb'
 
     const slide__image_img = document.createElement('img')
-    slide__image_img.src = thumbURLs.large
 
-    if(type === 'regular')
-        makeResponsiveImage(slide__image_img, thumbURLs)
+    if(type === 'regular'){
+        const slide__picture = makeResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
+        slide__image.append(slide__picture)
+    }
+    else {
+        const slide__picture = makeNonResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
+        slide__image.append(slide__picture)
+    }
 
-    slide__image.append(slide__image_img)
     slide.append(slide__image)
     return slide
 }
@@ -235,44 +239,44 @@ function setContentAnimation(heightOfContent, container) {
 
     const keyframes = 
     `
-    @-webkit-keyframes slide-bottom {
+    @-webpkit-keyframes slide-bottom {
         0% {
-          -webkit-transform: translateY(0);
+          -webpkit-transform: translateY(0);
                   transform: translateY(0);
         }
         100% {
-          -webkit-transform: translateY(${heightOfContent}px);
+          -webpkit-transform: translateY(${heightOfContent}px);
                   transform: translateY(${heightOfContent}px);
         }
       }
       @keyframes slide-bottom {
         0% {
-          -webkit-transform: translateY(0);
+          -webpkit-transform: translateY(0);
                   transform: translateY(0);
         }
         100% {
-          -webkit-transform: translateY(${heightOfContent}px);
+          -webpkit-transform: translateY(${heightOfContent}px);
                   transform: translateY(${heightOfContent}px);
         }
       }
 
-    @-webkit-keyframes slide-top {
+    @-webpkit-keyframes slide-top {
     0% {
-        -webkit-transform: translateY(${heightOfContent}px);
+        -webpkit-transform: translateY(${heightOfContent}px);
                 transform: translateY(${heightOfContent}px);
     }
     100% {
-        -webkit-transform: translateY(0);
+        -webpkit-transform: translateY(0);
                 transform: translateY(0);
     }
     }
     @keyframes slide-top {
     0% {
-        -webkit-transform: translateY(${heightOfContent}px);
+        -webpkit-transform: translateY(${heightOfContent}px);
                 transform: translateY(${heightOfContent}px);
     }
     100% {
-        -webkit-transform: translateY(0);
+        -webpkit-transform: translateY(0);
                 transform: translateY(0);
     }
     }
@@ -288,18 +292,49 @@ function setSwiperThemeColor(color) {
     swiperContainer.style.setProperty('--swiper-theme-color', color);
 }
 
-function makeResponsiveImage(slideImage, urls) {
+function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
+
     const picture = document.createElement('picture')
 
-    const sourceSmall = document.createElement('source')
-    sourceSmall.setAttribute('srcset', urls.small)
-    sourceSmall.setAttribute('media', '(max-width: 450px)')
+    const webpSourceSmall = document.createElement('source')
+    webpSourceSmall.setAttribute('srcset', webpURLs.small)
+    webpSourceSmall.setAttribute('media', '(max-width: 450px)')
 
-    const sourceMedium = document.createElement('source')
-    sourceMedium.setAttribute('srcset', urls.medium)
-    sourceMedium.setAttribute('media', '(max-width: 850px)')
+    const webpSourceMedium = document.createElement('source')
+    webpSourceMedium.setAttribute('srcset', webpURLs.medium)
+    webpSourceMedium.setAttribute('media', '(max-width: 850px)')
 
-    picture.append(sourceSmall, sourceMedium, slideImage)
+    const pngSourceSmall = document.createElement('source')
+    pngSourceSmall.setAttribute('srcset', pngURLs.small)
+    pngSourceSmall.setAttribute('media', '(max-width: 450px)')
+
+    const pngSourceMedium = document.createElement('source')
+    pngSourceMedium.setAttribute('srcset', pngURLs.medium)
+    pngSourceMedium.setAttribute('media', '(max-width: 850px)')
+
+    const pngSourceLarge = document.createElement('source')
+    pngSourceLarge.setAttribute('srcset', pngURLs.large)
+    pngSourceLarge.setAttribute('media', '(max-width: 1020px)')
+
+    slideImage.src = webpURLs.large
+    slideImage.alt = webpURLs.large.substring(0, webpURLs.large.indexOf('.'))
+
+    picture.append(pngSourceSmall, pngSourceMedium, slideImage)
+
+    return picture;
+}
+
+function makeNonResponsiveImage(slideImage, pngURLs, webpURLs) {
+    const picture = document.createElement('picture')
+
+    const pngSourceLarge = document.createElement('source')
+    pngSourceLarge.setAttribute('srcset', pngURLs.large)
+    pngSourceLarge.setAttribute('media', '(max-width: 1020px)')
+
+    slideImage.src = webpURLs.large
+    slideImage.alt = webpURLs.large.substring(0, webpURLs.large.indexOf('.'))
+
+    picture.append(slideImage)
 
     return picture;
 }
