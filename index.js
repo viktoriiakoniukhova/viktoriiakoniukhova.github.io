@@ -120,15 +120,11 @@ function createSlideImage(slide, href, title, pngURLs, webpURLs, type) {
 
     const slide__image_img = document.createElement('img')
 
-    if(type === 'regular'){
-        const slide__picture = makeResponsiveImage(slide__image_img, pngURLs, webpURLs)
-        slide__image_link.append(slide__picture)
-    }
-    else {
-        const slide__picture = makeNonResponsiveImage(slide__image_img, pngURLs, webpURLs)
-        slide__image_link.append(slide__picture)
-    }
+    const slide__picture = type === 'regular' 
+        ? makeResponsiveImage(slide__image_img, pngURLs, webpURLs)
+        : makeNonResponsiveImage(slide__image_img, pngURLs, webpURLs)
 
+    slide__image_link.append(slide__picture)
     slide__image.append(slide__image_link)
     slide.append(slide__image)
 
@@ -220,15 +216,11 @@ function createSlideThumb(pngThumbURLs, webpThumbURLs, type) {
 
     const slide__image_img = document.createElement('img')
 
-    if(type === 'regular'){
-        const slide__picture = makeResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
-        slide__image.append(slide__picture)
-    }
-    else {
-        const slide__picture = makeNonResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
-        slide__image.append(slide__picture)
-    }
-
+    const slide__picture = type === 'regular' 
+    ? makeResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
+    : makeNonResponsiveImage(slide__image_img, pngThumbURLs, webpThumbURLs)
+    
+    slide__image.append(slide__picture)
     slide.append(slide__image)
     return slide
 }
@@ -296,17 +288,19 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
 
     const picture = document.createElement('picture')
 
-    const webpSourceSmall = document.createElement('source')
-    webpSourceSmall.setAttribute('srcset', webpURLs.small)
-    webpSourceSmall.setAttribute('media', '(max-width: 450px)')
+    // const webpSourceSmall = document.createElement('source')
+    // webpSourceSmall.setAttribute('srcset', webpURLs.small)
+    // webpSourceSmall.setAttribute('media', '(max-width: 450px)')
 
-    const webpSourceMedium = document.createElement('source')
-    webpSourceMedium.setAttribute('srcset', webpURLs.medium)
-    webpSourceMedium.setAttribute('media', '(max-width: 850px)')
+    // const webpSourceMedium = document.createElement('source')
+    // webpSourceMedium.setAttribute('srcset', webpURLs.medium)
+    // webpSourceMedium.setAttribute('media', '(max-width: 850px)')
 
-    const webpSourceLarge = document.createElement('source')
-    webpSourceLarge.setAttribute('srcset', webpURLs.large)
-    webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
+    // const webpSourceLarge = document.createElement('source')
+    // webpSourceLarge.setAttribute('srcset', webpURLs.large)
+    // webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
+
+    // picture.append(webpSourceSmall, webpSourceMedium, webpSourceLarge)
 
     const pngSourceSmall = document.createElement('source')
     pngSourceSmall.setAttribute('srcset', pngURLs.small)
@@ -319,7 +313,7 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
     slideImage.src = pngURLs.large
     slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
 
-    picture.append(webpSourceSmall, webpSourceMedium, webpSourceLarge ,pngSourceSmall, pngSourceMedium, slideImage)
+    picture.append(pngSourceSmall, pngSourceMedium, slideImage)
 
     return picture;
 }
@@ -327,14 +321,16 @@ function makeResponsiveImage(slideImage, pngURLs, webpURLs) {
 function makeNonResponsiveImage(slideImage, pngURLs, webpURLs) {
     const picture = document.createElement('picture')
 
-    const webpSourceLarge = document.createElement('source')
-    webpSourceLarge.setAttribute('srcset', webpURLs.large)
-    webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
+    // const webpSourceLarge = document.createElement('source')
+    // webpSourceLarge.setAttribute('srcset', webpURLs.large)
+    // webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
+
+    // picture.append(webpSourceLarge)
 
     slideImage.src = pngURLs.large
     slideImage.alt = pngURLs.large.substring(0, pngURLs.large.indexOf('.'))
 
-    picture.append(webpSourceLarge, slideImage)
+    picture.append(slideImage)
 
     return picture;
 }
