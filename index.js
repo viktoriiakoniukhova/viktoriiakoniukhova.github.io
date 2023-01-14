@@ -3,10 +3,11 @@
 const url = 'https://raw.githubusercontent.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io/main/projects.json'
 
 const request = new XMLHttpRequest();
-request.open("GET", url , false);
+request.open("GET", url, false);
 request.send(null);
 
 const data = JSON.parse(request.responseText)
+const numOfSlides = data.length;
 
     // Delete navigation blocks
 const prevArrow = document.querySelector('.swiper-button-prev')
@@ -34,7 +35,6 @@ const swiperThumbsContainer = document.querySelector('.swiper-container__thumbs'
 const swiperThumbsWrapper = document.querySelectorAll('.swiper-wrapper')[1]
 
     // Generate swiper content
-
 data.map(({title, href, pngURLs, pngThumbURLs, tech, colors, type}) => generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type))
 
 const swiperThumbs = new Swiper('.swiper__thumbs', {
@@ -45,7 +45,7 @@ const swiperThumbs = new Swiper('.swiper__thumbs', {
     slideToClickedSlide: true,
 
     loop: true,
-    loopedSlides: data.length,
+    loopedSlides: numOfSlides,
     parallax: true
 })
 
@@ -54,16 +54,17 @@ const swiper = new Swiper('.swiper__main', {
 
     direction: 'horizontal',
     loop: true,
-    loopedSlides: data.length,
+    loopedSlides: numOfSlides,
+    slidesPerView: 'auto',
     // Pagination
     pagination: {
-      el: '.swiper-pagination',
+    el: '.swiper-pagination',
     },
-  
+
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
     },
 
     // Events
@@ -73,20 +74,20 @@ const swiper = new Swiper('.swiper__main', {
         slideChange: function () {
             const currentActiveSlide = this.slides[this.activeIndex];
             const currentSlideContentHeight = currentActiveSlide.lastElementChild.clientHeight;
-
+            
             setContentAnimation(currentSlideContentHeight, swiperWrapper)
 
             const currentSlideColors = data[this.realIndex].colors;
             this.realIndex ? setSwiperThemeColor(currentSlideColors[0]) : setSwiperThemeColor(currentSlideColors[1])
         }
-      }
-  });
+    }
+});
 
-  // Main and thumbs swiper controller
-  swiper.controller.control = swiperThumbs;
-  swiperThumbs.controller.control = swiper;
+// Main and thumbs swiper controller
+swiper.controller.control = swiperThumbs;
+swiperThumbs.controller.control = swiper;
 
-  // Open links in new tab
+// Open links in new tab
 
 const allLinks = document.querySelectorAll('a');
 
@@ -108,9 +109,14 @@ function generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type) {
     swiperWrapper.append(slide)
 
     swiperThumbsWrapper.append(createSlideThumb(pngThumbURLs, type))
+ 
 
     // Hide "More Info" panel
-    slideContent.style.top = -slideContent.offsetHeight + 'px'
+    window.addEventListener('DOMContentLoaded', (e) => {
+        slideContent.style.top = -slideContent.offsetHeight + 'px'
+        slideContent.style.visibility = ''
+        slideContent.style.transition = 'visibility 0s linear 0s, opacity 300ms'
+    })
 }
 
 function createSlideImage(slide, href, title, pngURLs, type) {
@@ -156,6 +162,8 @@ function createSlideContent(colors, title, href, tech) {
     slide__content.classList.add('slide__content')
     slide__content.style.backgroundColor = colors[0]
     slide__content.style.color = colors[2]
+    slide__content.style.visibility = 'hidden'
+
 
     const slide__content_link = document.createElement('div')
     slide__content_link.className = 'slide__content-link'
@@ -220,7 +228,6 @@ function createSlideThumb(pngThumbURLs, type) {
     const slide__image = document.createElement('div')
     slide__image.className = type === 'main' ? 'slide__main_image' : 'slide__image_thumb'
     slide.setAttribute('data-swiper-parallax-opacity', '0.5')
-    // slide__image.className = 'slide__image_thumb'
 
     const slide__image_img = document.createElement('img')
     slide__image_img.src = pngThumbURLs.large
@@ -317,11 +324,6 @@ function makeResponsiveImage(slideImage, pngURLs) {
 function makeNonResponsiveImage(slideImage, pngURLs) {
     const picture = document.createElement('picture')
 
-    // const webpSourceLarge = document.createElement('source')
-    // webpSourceLarge.setAttribute('srcset', webpURLs.large)
-    // webpSourceLarge.setAttribute('media', '(max-width: 1020px)')
-
-    // picture.append(webpSourceLarge)
     slideImage.src = pngURLs.large
 
     const pngUrl = pngURLs.large;
