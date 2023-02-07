@@ -1,182 +1,200 @@
 [
-    {
-        "title" : "My github",
-        "href" : "https://github.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io",
-        "imgURL" : "./img/github-mark-white.png",
-        "pngURLs" : {
-            "large" : "./img/github-mark-white.png",
-            "medium" : "",
-            "small": ""
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/github-mark-white.png",
-            "medium" : "",
-            "small": ""
-        },
-        "tech" : [],
-        "colors": ["#FFFFFF", "#24292F", "#2A9048"],
-        "type": "main"
+  {
+    "title": "My github",
+    "href": "https://github.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io",
+    "imgURL": "./img/github-mark-white.png",
+    "pngURLs": {
+      "large": "./img/github-mark-white.png",
+      "medium": "",
+      "small": ""
     },
-    {
-        "title" : "GTP-3 Landing",
-        "href" : "https://melodious-cendol-fa4ef0.netlify.app/",
-        "imgURL" : "./img/gtp3.png",
-        "pngURLs" : {
-            "large" : "./img/gtp3.png",
-            "medium" : "./img/gtp3-medium.png",
-            "small": "./img/gtp3-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/gtp3.png",
-            "medium" : "./img/thumbs/gtp3-medium.png",
-            "small": "./img/thumbs/gtp3-small.png"
-        },
-        "tech" : ["react", "figma"],
-        "colors": ["#FF4820", "#031B34", "#031B34"],
-        "type" : "regular"
+    "pngThumbURLs": {
+      "large": "./img/thumbs/github-mark-white.png",
+      "medium": "",
+      "small": ""
     },
-    {
-        "title" : "Quizzical",
-        "href" : "https://flourishing-florentine-18435d.netlify.app/",
-        "imgURL" : "./img/quiz.png",
-        "pngURLs" : {
-            "large" : "./img/quiz.png",
-            "medium" : "./img/quiz-medium.png",
-            "small": "./img/quiz-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/quiz.png",
-            "medium" : "./img/thumbs/quiz-medium.png",
-            "small": "./img/thumbs/quiz-small.png"
-        },
-        "tech" : ["react", "figma"],
-        "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
-        "type" : "regular"
+    "tech": [],
+    "colors": ["#FFFFFF", "#24292F", "#2A9048"],
+    "type": "main"
+  },
+  {
+    "title": "GTP-3 Landing",
+    "href": "https://melodious-cendol-fa4ef0.netlify.app/",
+    "imgURL": "./img/gtp3.png",
+    "pngURLs": {
+      "large": "./img/gtp3.png",
+      "medium": "./img/gtp3-medium.png",
+      "small": "./img/gtp3-small.png"
     },
-    {
-        "title" : "CoffeeShop Landing",
-        "href" : "https://viktoriiakoniukhova.github.io/cafe",
-        "imgURL" : "./img/coffee-bar.png",
-        "pngURLs" : {
-            "large" : "./img/coffee-bar.png",
-            "medium" : "./img/coffee-bar-medium.png",
-            "small": "./img/coffee-bar-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/coffee-bar.png",
-            "medium" : "./img/thumbs/coffee-bar-medium.png",
-            "small": "./img/thumbs/coffee-bar-small.png"
-        },
-        "tech" : ["bootstrap"],
-        "colors": [ "#865E54","#663829", "#FACFA2"],
-        "type" : "regular"
+    "pngThumbURLs": {
+      "large": "./img/thumbs/gtp3.png",
+      "medium": "./img/thumbs/gtp3-medium.png",
+      "small": "./img/thumbs/gtp3-small.png"
     },
-    {
-        "title" : "Clinic Landing",
-        "href" : "https://viktoriiakoniukhova.github.io/medical",
-        "imgURL" : "./img/clinic.png",
-        "pngURLs" : {
-            "large" : "./img/clinic.png",
-            "medium" : "./img/clinic-medium.png",
-            "small": "./img/clinic-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/clinic.png",
-            "medium" : "./img/thumbs/clinic-medium.png",
-            "small": "./img/thumbs/clinic-small.png"
-        },
-        "tech" : ["flexbox"],
-        "colors": ["#0078AA", "#171717", "171717"],
-        "type" : "regular"
+    "tech": ["react", "figma"],
+    "colors": ["#FF4820", "#031B34", "#031B34"],
+    "type": "regular"
+  },
+  {
+    "title": "Quizzical",
+    "href": "https://flourishing-florentine-18435d.netlify.app/",
+    "imgURL": "./img/quiz.png",
+    "pngURLs": {
+      "large": "./img/quiz.png",
+      "medium": "./img/quiz-medium.png",
+      "small": "./img/quiz-small.png"
     },
-    {
-        "title" : "Pattern Landing",
-        "href" : "https://viktoriiakoniukhova.github.io/apples",
-        "imgURL" : "./img/apples.png",
-        "pngURLs" : {
-            "large" : "./img/apples.png",
-            "medium" : "./img/apples-medium.png",
-            "small": "./img/apples-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/apples.png",
-            "medium" : "./img/thumbs/apples-medium.png",
-            "small": "./img/thumbs/apples-small.png"
-        },
-        "tech" : ["flexbox"],
-        "colors": ["#243C0B","#3D4B58",  "#ffffff"],
-        "type" : "regular"
+    "pngThumbURLs": {
+      "large": "./img/thumbs/quiz.png",
+      "medium": "./img/thumbs/quiz-medium.png",
+      "small": "./img/thumbs/quiz-small.png"
     },
-    {
-        "title" : "Photographer Landing",
-        "href" : "https://viktoriiakoniukhova.github.io/photographer",
-        "imgURL" : "./img/photographer.png",
-        "pngURLs" : {
-            "large" : "./img/photographer.png",
-            "medium" : "./img/photographer-medium.png",
-            "small": "./img/photographer-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/photographer.png",
-            "medium" : "./img/thumbs/photographer-medium.png",
-            "small": "./img/thumbs/photographer-small.png"
-        },
-        "tech" : ["flexbox", "grid"],
-        "colors": ["#1B2539", "#C49479", "#C49479"],
-        "type" : "regular"
+    "tech": ["react", "figma"],
+    "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
+    "type": "regular"
+  },
+  {
+    "title": "CoffeeShop Landing",
+    "href": "https://viktoriiakoniukhova.github.io/cafe",
+    "imgURL": "./img/coffee-bar.png",
+    "pngURLs": {
+      "large": "./img/coffee-bar.png",
+      "medium": "./img/coffee-bar-medium.png",
+      "small": "./img/coffee-bar-small.png"
     },
-    {
-        "title" : "Finance Tracker",
-        "href" : "https://crm-system-vue3-20361.web.app/login",
-        "imgURL" : "./img/crm-system.png",
-        "pngURLs" : {
-            "large" : "./img/crm-system.png",
-            "medium" : "",
-            "small": ""
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/crm-system.png",
-            "medium" : "",
-            "small": ""
-        },
-        "tech" : ["vue 3", "materialize"],
-        "colors": ["#26A69A", "#FFA726", "#ffffff"],
-        "type" : "desktop-only"
+    "pngThumbURLs": {
+      "large": "./img/thumbs/coffee-bar.png",
+      "medium": "./img/thumbs/coffee-bar-medium.png",
+      "small": "./img/thumbs/coffee-bar-small.png"
     },
-    {
-        "title" : "RPC Game",
-        "href" : "https://viktoriiakoniukhova.github.io/rockpaperscissors",
-        "imgURL" : "./img/rock-paper-scissors.png",
-        "pngURLs" : {
-            "large" : "./img/rock-paper-scissors.png",
-            "medium" : "./img/rock-paper-scissors-medium.png",
-            "small": "./img/rock-paper-scissors-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/rock-paper-scissors.png",
-            "medium" : "./img/thumbs/rock-paper-scissors-medium.png",
-            "small": "./img/thumbs/rock-paper-scissors-small.png"
-        },
-        "tech" : ["JS"],
-        "colors": ["#000000", "#F55536", "#B5FFE9"],
-        "type" : "regular"
+    "tech": ["bootstrap"],
+    "colors": ["#865E54", "#663829", "#FACFA2"],
+    "type": "regular"
+  },
+  {
+    "title": "Jadoo Landing",
+    "href": "https://viktoriiakoniukhova.github.io/jadoo-travel/",
+    "imgURL": "./img/jadoo.png",
+    "pngURLs": {
+      "large": "./img/jadoo.png",
+      "medium": "./img/jadoo-medium.png",
+      "small": "./img/jadoo-small.png"
     },
-    {
-        "title" : "Capital Cards",
-        "href" : "https://viktoriiakoniukhova.github.io/flashcards/",
-        "imgURL" : "./img/capitals.png",
-        "pngURLs" : {
-            "large" : "./img/capitals.png",
-            "medium" : "./img/capitals-medium.png",
-            "small": "./img/capitals-small.png"
-        },
-        "pngThumbURLs" : {
-            "large" : "./img/thumbs/capitals.png",
-            "medium" : "./img/thumbs/capitals-medium.png",
-            "small": "./img/thumbs/capitals-small.png"
-        },
-        "tech" : ["SCSS"],
-        "colors": ["#F4A460", "#434D54", "#434D54"],
-        "type" : "regular"
-    }
+    "pngThumbURLs": {
+      "large": "./img/thumbs/jadoo.png",
+      "medium": "./img/thumbs/jadoo-medium.png",
+      "small": "./img/thumbs/jadoo-small.png"
+    },
+    "tech": ["SCSS"],
+    "colors": ["#FFF1DA", "#E28168", "#181E4B"],
+    "type": "regular"
+  },
+  {
+    "title": "Clinic Landing",
+    "href": "https://viktoriiakoniukhova.github.io/medical",
+    "imgURL": "./img/clinic.png",
+    "pngURLs": {
+      "large": "./img/clinic.png",
+      "medium": "./img/clinic-medium.png",
+      "small": "./img/clinic-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/clinic.png",
+      "medium": "./img/thumbs/clinic-medium.png",
+      "small": "./img/thumbs/clinic-small.png"
+    },
+    "tech": ["flexbox"],
+    "colors": ["#0078AA", "#171717", "171717"],
+    "type": "regular"
+  },
+  {
+    "title": "Pattern Landing",
+    "href": "https://viktoriiakoniukhova.github.io/apples",
+    "imgURL": "./img/apples.png",
+    "pngURLs": {
+      "large": "./img/apples.png",
+      "medium": "./img/apples-medium.png",
+      "small": "./img/apples-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/apples.png",
+      "medium": "./img/thumbs/apples-medium.png",
+      "small": "./img/thumbs/apples-small.png"
+    },
+    "tech": ["flexbox"],
+    "colors": ["#243C0B", "#3D4B58", "#ffffff"],
+    "type": "regular"
+  },
+  {
+    "title": "Photographer Landing",
+    "href": "https://viktoriiakoniukhova.github.io/photographer",
+    "imgURL": "./img/photographer.png",
+    "pngURLs": {
+      "large": "./img/photographer.png",
+      "medium": "./img/photographer-medium.png",
+      "small": "./img/photographer-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/photographer.png",
+      "medium": "./img/thumbs/photographer-medium.png",
+      "small": "./img/thumbs/photographer-small.png"
+    },
+    "tech": ["flexbox", "grid"],
+    "colors": ["#1B2539", "#C49479", "#C49479"],
+    "type": "regular"
+  },
+  {
+    "title": "Finance Tracker",
+    "href": "https://crm-system-vue3-20361.web.app/login",
+    "imgURL": "./img/crm-system.png",
+    "pngURLs": {
+      "large": "./img/crm-system.png",
+      "medium": "",
+      "small": ""
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/crm-system.png",
+      "medium": "",
+      "small": ""
+    },
+    "tech": ["vue 3", "materialize"],
+    "colors": ["#26A69A", "#FFA726", "#ffffff"],
+    "type": "desktop-only"
+  },
+  {
+    "title": "RPC Game",
+    "href": "https://viktoriiakoniukhova.github.io/rockpaperscissors",
+    "imgURL": "./img/rock-paper-scissors.png",
+    "pngURLs": {
+      "large": "./img/rock-paper-scissors.png",
+      "medium": "./img/rock-paper-scissors-medium.png",
+      "small": "./img/rock-paper-scissors-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/rock-paper-scissors.png",
+      "medium": "./img/thumbs/rock-paper-scissors-medium.png",
+      "small": "./img/thumbs/rock-paper-scissors-small.png"
+    },
+    "tech": ["JS"],
+    "colors": ["#000000", "#F55536", "#B5FFE9"],
+    "type": "regular"
+  },
+  {
+    "title": "Capital Cards",
+    "href": "https://viktoriiakoniukhova.github.io/flashcards/",
+    "imgURL": "./img/capitals.png",
+    "pngURLs": {
+      "large": "./img/capitals.png",
+      "medium": "./img/capitals-medium.png",
+      "small": "./img/capitals-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/capitals.png",
+      "medium": "./img/thumbs/capitals-medium.png",
+      "small": "./img/thumbs/capitals-small.png"
+    },
+    "tech": ["SCSS"],
+    "colors": ["#F4A460", "#434D54", "#434D54"],
+    "type": "regular"
+  }
 ]
