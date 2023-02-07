@@ -18,6 +18,24 @@
     "type": "main"
   },
   {
+    "title": "Search (SpaceNews API)",
+    "href": "https://harmonious-monstera-57c2b6.netlify.app/",
+    "imgURL": "./img/newsletter.png",
+    "pngURLs": {
+      "large": "./img/newsletter.png",
+      "medium": "./img/newsletter-medium.png",
+      "small": "./img/newsletter-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/newsletter.png",
+      "medium": "./img/thumbs/newsletter-medium.png",
+      "small": "./img/thumbs/newsletter-small.png"
+    },
+    "tech": ["react", "TS", "SCSS", "Material UI"],
+    "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
+    "type": "regular"
+  },
+  {
     "title": "GTP-3 Landing",
     "href": "https://melodious-cendol-fa4ef0.netlify.app/",
     "imgURL": "./img/gtp3.png",
@@ -85,7 +103,7 @@
       "medium": "./img/thumbs/jadoo-medium.png",
       "small": "./img/thumbs/jadoo-small.png"
     },
-    "tech": ["SCSS"],
+    "tech": ["SCSS", "figma"],
     "colors": ["#FFF1DA", "#E28168", "#181E4B"],
     "type": "regular"
   },
