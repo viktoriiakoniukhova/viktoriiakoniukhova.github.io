@@ -76,16 +76,16 @@
     "href": "https://gentle-creponne-7351f1.netlify.app/",
     "imgURL": "./img/decbase.png",
     "pngURLs": {
-      "large": "./img/decbase.png",
-      "medium": "./img/decbase-medium.png",
-      "small": "./img/decbase-small.png"
+      "large": "./img/organick.png",
+      "medium": "./img/organick-medium.png",
+      "small": "./img/organick-small.png"
     },
     "pngThumbURLs": {
-      "large": "./img/thumbs/decbase.png",
-      "medium": "./img/thumbs/decbase-medium.png",
-      "small": "./img/thumbs/decbase-small.png"
+      "large": "./img/thumbs/organick.png",
+      "medium": "./img/thumbs/organick-medium.png",
+      "small": "./img/thumbs/organick-small.png"
     },
-    "tech": ["React", "Express", "Mongo DB", "Node JS"],
+    "tech": ["React", "React-router", "Express", "Mongo DB", "Node JS"],
     "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
     "type": "regular"
   },
