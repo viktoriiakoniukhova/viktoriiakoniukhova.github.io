@@ -295,7 +295,7 @@ function setContentAnimation(heightOfContent, container) {
                 transform: translateY(0);
     }
     }
-      
+
     `;
   const rules = document.createTextNode(keyframes);
 

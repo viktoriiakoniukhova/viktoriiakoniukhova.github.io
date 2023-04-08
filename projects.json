@@ -74,7 +74,7 @@
   {
     "title": "Product Shop (MERN)",
     "href": "https://gentle-creponne-7351f1.netlify.app/",
-    "imgURL": "./img/decbase.png",
+    "imgURL": "./img/organick.png",
     "pngURLs": {
       "large": "./img/organick.png",
       "medium": "./img/organick-medium.png",
@@ -86,7 +86,7 @@
       "small": "./img/thumbs/organick-small.png"
     },
     "tech": ["React", "React-router", "Express", "Mongo DB", "Node JS"],
-    "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
+    "colors": ["#EFD372", "#82b896", "#274C5B"],
     "type": "regular"
   },
   {
@@ -104,7 +104,7 @@
       "small": "./img/thumbs/decbase-small.png"
     },
     "tech": ["Swiper JS", "SCSS", "API fetch"],
-    "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
+    "colors": ["#37806b", "#caa892", "#ffffff"],
     "type": "regular"
   },
   {
