@@ -72,6 +72,42 @@
     "type": "regular"
   },
   {
+    "title": "Product Shop (MERN)",
+    "href": "https://gentle-creponne-7351f1.netlify.app/",
+    "imgURL": "./img/decbase.png",
+    "pngURLs": {
+      "large": "./img/decbase.png",
+      "medium": "./img/decbase-medium.png",
+      "small": "./img/decbase-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/decbase.png",
+      "medium": "./img/thumbs/decbase-medium.png",
+      "small": "./img/thumbs/decbase-small.png"
+    },
+    "tech": ["React", "Express", "Mongo DB", "Node JS"],
+    "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
+    "type": "regular"
+  },
+  {
+    "title": "DECBASE landing",
+    "href": "https://viktoriiakoniukhova.github.io/decbase",
+    "imgURL": "./img/decbase.png",
+    "pngURLs": {
+      "large": "./img/decbase.png",
+      "medium": "./img/decbase-medium.png",
+      "small": "./img/decbase-small.png"
+    },
+    "pngThumbURLs": {
+      "large": "./img/thumbs/decbase.png",
+      "medium": "./img/thumbs/decbase-medium.png",
+      "small": "./img/thumbs/decbase-small.png"
+    },
+    "tech": ["Swiper JS", "SCSS", "API fetch"],
+    "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
+    "type": "regular"
+  },
+  {
     "title": "CoffeeShop Landing",
     "href": "https://viktoriiakoniukhova.github.io/cafe",
     "imgURL": "./img/coffee-bar.png",
