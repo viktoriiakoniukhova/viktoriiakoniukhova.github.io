@@ -15,7 +15,8 @@
     },
     "tech": [],
     "colors": ["#FFFFFF", "#24292F", "#2A9048"],
-    "type": "main"
+    "type": "main",
+    "isShown": true
   },
   {
     "title": "Search (SpaceNews API)",
@@ -33,7 +34,8 @@
     },
     "tech": ["react", "TS", "SCSS", "Material UI"],
     "colors": ["#8D8D8D", "#383A41", "#FFFF19"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "GTP-3 Landing",
@@ -51,7 +53,8 @@
     },
     "tech": ["react", "figma"],
     "colors": ["#FF4820", "#031B34", "#031B34"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Quizzical",
@@ -69,7 +72,8 @@
     },
     "tech": ["react", "figma"],
     "colors": ["#DEEBF8", "#293264", "#4D5B9E"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Product Shop (MERN)",
@@ -87,7 +91,8 @@
     },
     "tech": ["React", "React-router", "Express", "Mongo DB", "Node JS"],
     "colors": ["#EFD372", "#82b896", "#274C5B"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "DECBASE landing",
@@ -105,7 +110,8 @@
     },
     "tech": ["Swiper JS", "SCSS", "API fetch"],
     "colors": ["#37806b", "#caa892", "#ffffff"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "CoffeeShop Landing",
@@ -123,7 +129,8 @@
     },
     "tech": ["bootstrap"],
     "colors": ["#865E54", "#663829", "#FACFA2"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Jadoo Landing",
@@ -141,7 +148,8 @@
     },
     "tech": ["SCSS", "figma"],
     "colors": ["#FFF1DA", "#E28168", "#181E4B"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Clinic Landing",
@@ -159,7 +167,8 @@
     },
     "tech": ["flexbox"],
     "colors": ["#0078AA", "#171717", "171717"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Pattern Landing",
@@ -177,7 +186,8 @@
     },
     "tech": ["flexbox"],
     "colors": ["#243C0B", "#3D4B58", "#ffffff"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": false
   },
   {
     "title": "Photographer Landing",
@@ -195,7 +205,8 @@
     },
     "tech": ["flexbox", "grid"],
     "colors": ["#1B2539", "#C49479", "#C49479"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": false
   },
   {
     "title": "Finance Tracker",
@@ -213,7 +224,8 @@
     },
     "tech": ["vue 3", "materialize"],
     "colors": ["#26A69A", "#FFA726", "#ffffff"],
-    "type": "desktop-only"
+    "type": "desktop-only",
+    "isShown": true
   },
   {
     "title": "RPC Game",
@@ -231,7 +243,8 @@
     },
     "tech": ["JS"],
     "colors": ["#000000", "#F55536", "#B5FFE9"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   },
   {
     "title": "Capital Cards",
@@ -249,6 +262,7 @@
     },
     "tech": ["SCSS"],
     "colors": ["#F4A460", "#434D54", "#434D54"],
-    "type": "regular"
+    "type": "regular",
+    "isShown": true
   }
 ]

@@ -1,4 +1,4 @@
-// import data from './projects.json' assert {type: 'json'};
+// import data from "./projects.json" assert { type: "json" };
 
 const url =
   "https://raw.githubusercontent.com/viktoriiakoniukhova/viktoriiakoniukhova.github.io/main/projects.json";
@@ -37,8 +37,18 @@ const swiperThumbsContainer = document.querySelector(
 const swiperThumbsWrapper = document.querySelectorAll(".swiper-wrapper")[1];
 
 // Generate swiper content
-data.map(({ title, href, pngURLs, pngThumbURLs, tech, colors, type }) =>
-  generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type)
+data.map(
+  ({ title, href, pngURLs, pngThumbURLs, tech, colors, type, isShown }) =>
+    generateSlide(
+      title,
+      href,
+      pngURLs,
+      pngThumbURLs,
+      tech,
+      colors,
+      type,
+      isShown
+    )
 );
 
 const swiperThumbs = new Swiper(".swiper__thumbs", {
@@ -106,7 +116,17 @@ allLinks.forEach((link) =>
 
 // Generate slide
 
-function generateSlide(title, href, pngURLs, pngThumbURLs, tech, colors, type) {
+function generateSlide(
+  title,
+  href,
+  pngURLs,
+  pngThumbURLs,
+  tech,
+  colors,
+  type,
+  isShown
+) {
+  if (!isShown) return;
   const slide = document.createElement("div");
   slide.classList.add("swiper-slide", "slide");
 
